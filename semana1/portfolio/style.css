@@ -1,0 +1,83 @@
+*{margin: 0; padding: 0;}
+body{
+	color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+/* NAV */
+header{
+    background: rgba(255, 255, 255, 0.753); 
+    height: 100px;}
+.nav{
+  display: flex;
+  text-align: center;
+  margin: 10px;
+  padding: 0;
+}
+.nav a{
+  color: black;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+.nav a:hover{
+    background-color: rgb(192, 192, 192); 
+    color: white;
+    border-radius:10%;   
+}
+/* SECTION */
+section{
+    background: rgb(192, 192, 192);
+}
+.section1{
+    padding: 100px 0 40px 0;
+    font-size: 15px;
+}
+.section1 h1{
+    text-align: center;
+}
+.img1 { 
+    text-align: center; 
+    padding-top: 50px;}
+img{ 
+    width: 150px; 
+    height: auto;
+    border-radius:50%;
+}
+.section2 p {
+  font-size: 12px;
+  font-style: italic;
+  text-align: right;
+  display: block;
+  padding-top: 120px;
+  padding-right: 10px;
+}
+/* FOOTER */
+footer {
+  padding: 40px 0 48px 0px;
+  text-align: center;
+  background: white;
+  color: black;
+  position: relative;
+}
+.box1{
+  padding:0;
+  margin:0;
+  border: 0
+}
+#email{
+  padding: 10px;
+  background: white;
+  white-space: nowrap;    
+  border: 1px solid #grey;
+  width: 300px;
+  float: center;  
+}
+#benviar{
+  padding: 10px;
+  background:  white;
+  color: black;
+  width: 100px;
+  cursor: pointer;
+  float: center;
+}
