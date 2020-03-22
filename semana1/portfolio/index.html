@@ -4,38 +4,63 @@
 <head>
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<title>Portfólio - Nathália Costa</title>
+	<title>Nathália Costa</title>
 	<meta name="description" content="Portfólio inicial."/>
 	<meta name="keywords" content="future4, Portfólio, projetos"/>
     <link rel="icon" href="bol.png">
 	<meta name="author" content="Nathalia Costa"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css2? family = Jura: wght @ 600 & display = swap" rel = "folha de estilo">
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-		<div id="nav">
-            <img src=""></a>
-			<a href="index.html">HOME</a>
-            <a href="">PROJETOS</a>
-            <a href="">CURRICULO</a>
-			<a href="#email">CONTATO</a>
-		</div>
-	</header>
-    <section>
-        <div id="img1">
-            <img src="perfil-nthl.jpeg.jpeg"/>
+        <div class="menu">
+            <a href="index.html">HOME</a>
+            <a href="#formacoes">FORMAÇÕES</a>
+            <a href="#projetos">PROJETOS</a>
+            <a href="#email">CONTATO</a>
         </div>
-        <div id="section1">
-            <h1>Portfólio - Nathália Constantino Costa</h1>
+	</header>
+    <section class="perfil">
+        <div class="bio-foto">
+            <img src="ntthl.jpeg"/>
+        </div>
+        <div class="bio-texto">
+            <h1>Nathália Constantino Costa</h1>
+            <h4>Estudante de Desenvolvimento Full Stack</h4>
+        </div>
+    </section>
+    <section id="formacoes">
+        <div id="formacoes-titulo">
+            <h1>FORMAÇÕES</h1>
+        </div>
+        <div class="formacoes-descricao">
+            <p>Desenvolvimento Full Stack - Future4</p>
+            <p>Instrumentalidade do Serviço Social - PÓSFAR</p>
+            <p>Serviço Social - UnP</p>
+        </div>
+    </section>
+    <section id="projetos">
+        <div id="projetos-titulo">
+            <h1>PROJETOS</h1>
+        </div>
+        <div class="projetos-descricao">
+            <td>
+                <tr href="https://repl.it/@NathliaCosta/ProjetoFuture4Nathaliacc">Projeto da Selecão - Future4</tr>
+                <tr href="">Sistema de Loja - Future4</tr>
+            </td>
         </div>
     </section>
     <footer>
-      <div class="box1">
+      <div class="form-contato">
       <form>
-        <input type="text" id="email"placeholder="Coloque seu e-mail para contato! :)">
+        <input type="text" id="text"placeholder="Digite seu nome">
+        <input type="text" id="email"placeholder="Coloque seu e-mail">
+        <input type="text" id="mensagem"placeholder="Escreva sua mensagem...">
+        <br>
+        <br>
         <input type="submit" id="benviar">
       </form>
       </div>
