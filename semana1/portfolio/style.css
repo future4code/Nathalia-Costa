@@ -47,7 +47,7 @@ section, .perfil{
 #formacoes{
   background: black;
   text-align: center;
-  padding: 80px;
+  padding: 40px;
   padding-top: 40px;
   margin: 0;
   color: rgb(255, 255, 255);
@@ -71,6 +71,13 @@ section .formacoes-descricao p{
 }
 #projetos-titulo{
   padding-bottom: 40px;
+}
+#separador{
+  margin-right: 0;
+  padding-bottom: 0;
+  width: 100%;
+  height: 200px;
+  
 }
 section .projetos-descricao tr{
   padding: 50px;
