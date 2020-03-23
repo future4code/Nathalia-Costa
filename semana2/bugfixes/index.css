@@ -29,12 +29,15 @@ button:focus {
 img {
     width: 100px;
 }
-
-div>p:first-child {
-    display: flex;
-    width: 200px;
+#container-de-descricao>p:first-child {
+    display: block;
+    width: 210px;
     height: 60px;
     margin: 0 auto;
+}
+
+div>p:first-child {
+    display: block;
 }
 
 div img {
@@ -49,7 +52,7 @@ div img {
     font-size: 20px;
     color: white;
     position: relative;
-    top: 80px;
+    top: 20px;
 }
 
 .botao-amarelo:hover {
