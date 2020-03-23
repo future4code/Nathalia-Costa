@@ -31,7 +31,10 @@ img {
 }
 
 div>p:first-child {
-    display: inline;
+    display: flex;
+    width: 200px;
+    height: 60px;
+    margin: 0 auto;
 }
 
 div img {
@@ -103,6 +106,7 @@ div:last-child {
 
 table {
     width: 60%;
+    font-weight: bold;
 }
 
 td button {
