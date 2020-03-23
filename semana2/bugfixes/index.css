@@ -43,7 +43,7 @@ div>p:first-child {
 div img {
     background: white;
 }
-
+>img
 .botao-amarelo {
     background-color: #ffaf43;
     width: 250px;
@@ -125,7 +125,9 @@ td button {
     margin-top: 20px;
     height: 100px;
 }
-
+.container-do-search img{
+    width: 20px;
+}
 
 #back-button {
     background-color: white;
