@@ -25,7 +25,9 @@ input {
 button:focus {
     color: white;
 }
+button{
 
+}
 img {
     width: 50px;
 }
@@ -43,7 +45,7 @@ div>p:first-child {
 div img {
     background: white;
 }
->img
+
 .botao-amarelo {
     background-color: #ffaf43;
     width: 250px;
@@ -119,6 +121,10 @@ td button {
     height: 30px;
     border-radius: 5px;
     color: black;
+}
+td button:hover {
+    background-color: #ddb500;
+    color: white;
 }
 
 .container-do-search {
