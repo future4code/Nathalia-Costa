@@ -1,11 +1,13 @@
+
 .container{
-    width: 100vw;
     height: 100vh;
+    width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 200px 200px 200px 200px 200px 200px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows:repeat(6, 200px);
     align-items: center;
-	justify-content: center;
+    justify-content: center;
+    grid-gap: 2%;
 }
 .item{
     height: 100%;
@@ -14,47 +16,66 @@
     display: grid;
     align-items: center;
     justify-content: center;
-    grid-row: 10px;
     
 }
 #boxred{
-    height: 20%;
+    height: 100%;
     background-color: red;
-    grid-column: 1 / 7;
+    grid-column-end: span 6;
+    display: grid;
+    grid-gap: none;
 }
 #item1, #item4{
     background-color: blue;
+    grid-column-end: span 2;
 }
 #item2, #item5{
     background-color: yellow;
+    grid-column-end: span 2;
 }
 #item3, #item6{
     background-color: green;
+    grid-column-end: span 2;
 }
 
 #item7, #item8{
     background-color: black;
     color: white;
+    grid-column-end: span 3;
+    grid-row-end: span 2;
 }
-#item1{
+#item9, #item10, #item11{
     grid-column-end: span 2;
-}
-#item2{
-    grid-column-end: span 2;
-}
-#item9{
-}
-#item10{
-}
-#item11{
 }
 
 @media screen and (min-device-width : 320px) and (max-device-width : 420px) {
     /* celulares */
-    }
-    @media screen and (min-device-width : 421px) and (max-device-width : 800px) {
+
+}
+@media screen and (min-device-width : 421px) and (max-device-width : 800px) {
     /* tablets */
+    #boxred{
+        align-items: flex-start;
+        align-content: flex-start;
     }
-    @media screen and (min-device-width : 1200px) {
-    /* computadores */
+    #item1, #item2{
+        grid-column-end: span 3;
     }
+    #item3, #item6, #item11{
+        grid-column-end: span 7;
+    }
+    #item4, #item5{
+        grid-column-end: span 3;
+    }
+    
+    #item7, #item8{
+        grid-column-end: span 3;
+        grid-row-end: span 2;
+    }
+    #item9, #item10{
+        grid-column-end: span 3;
+    }
+    {
+
+    }
+}
