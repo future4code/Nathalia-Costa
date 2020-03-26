@@ -19,16 +19,16 @@ header{
 }
 
 section{
-    height: 100vh;
+    height: 120vh;
     width: 100%;
 }
 
 article{
-    background-color: blueviolet;
     height: 85vh;
     width: 100%;
+    padding-top: 10px;
     display: grid;
-    grid-template-rows: 1fr 8fr;
+    grid-template-rows: 2fr 80% 2fr 2fr 2fr 2fr;
     grid-template-columns: 90%;
     align-items: center;
     justify-content: center;
@@ -42,8 +42,6 @@ video{
 footer{
     height: 10%;
     width: 100%;
-    position: fixed;
-    bottom: 0;
     background-color: darkgray;
     font-weight: bold;
     display: grid;

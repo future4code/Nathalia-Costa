@@ -24,19 +24,21 @@ section{
     justify-content: center;
 }
 article{
-    height: 80%;
+    height: 90%;
     width: 80%;
     border: 1px solid chocolate;
     display: grid;
     grid-template-rows: 3fr 1fr;
-    align-items: center;
-    justify-content: center;
+    grid-template-columns: 100%;
 }
 video{
     height: 100%;
     width: 100%;
 }
-p{
+
+a{
+    text-decoration: none;
+    color: black;
     font-weight: bold;
 }
 footer{
