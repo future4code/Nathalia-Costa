@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+header{
+    background-color: chocolate;
+    font-size: 14px;
+    padding: 10px;
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+section{
+    height: 120vh;
+    width: 100%;
+}
+
+article{
+    height: 85vh;
+    width: 100%;
+    padding-top: 10px;
+    display: grid;
+    grid-template-rows: 2fr 80% 2fr 2fr 2fr 2fr;
+    grid-template-columns: 90%;
+    align-items: center;
+    justify-content: center;
+}
+
+video{
+    height: 100%;
+    width: 100%;
+}
+
+footer{
+    height: 10%;
+    width: 100%;
+    background-color: darkgray;
+    font-weight: bold;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}

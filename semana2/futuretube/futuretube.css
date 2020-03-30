@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+}
+body{
+    height: 100vh;
+    width: 100%;
+}
+
+header{
+    background-color: chocolate;
+    font-size: 14px;
+    padding: 20px;
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+section{
+    padding-left: 4%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 200px);
+    align-items: center;
+    justify-content: center;
+}
+article{
+    height: 90%;
+    width: 80%;
+    border: 1px solid chocolate;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    grid-template-columns: 100%;
+}
+video{
+    height: 100%;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+footer{
+    height: 10%;
+    background-color: darkgray;
+    font-weight: bold;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+/* PAGINA EXTERNA */
+#pagexterna{
+    padding-left: 4%;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+}
