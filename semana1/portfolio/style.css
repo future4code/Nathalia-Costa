@@ -8,6 +8,7 @@ body{
 header{
   background: rgb(192, 192, 192); 
   height: 50px;
+
   width: 100%;
   margin-top: 25px;
   position: fixed;
@@ -28,7 +29,9 @@ header{
 }
 /* SECTION */
 section, .perfil{
+
   padding-top: 70px;
+
   background: rgb(255, 255, 255);
   display: flex;
 }
@@ -37,7 +40,9 @@ section, .perfil{
   height: auto;
   border-radius:50%;
   margin: 50px;
+
   border: 4px solid;
+
 }
 .bio-texto{
   margin-top: 80px;
@@ -49,6 +54,7 @@ section, .perfil{
 .bio-texto h4{
   font-size: 15px;
 }
+
 .bio-texto img{
   padding-top: 15px;
   width: 30px; 
@@ -59,6 +65,7 @@ section, .perfil{
   text-align: center;
   padding: 70px;
   padding-top: 80px;
+
   margin: 0;
   color: rgb(255, 255, 255);
   display: block;
@@ -66,6 +73,7 @@ section, .perfil{
 #formacoes-titulo{
   padding-bottom: 40px;
 }
+
 section .formacoes-descricao h3{
   padding: 5px;
   padding-top: 70px;
@@ -78,12 +86,15 @@ section .formacoes-descricao h3{
 .formacoes-descricao img{
   width: 15px; 
   height: auto;
+
 }
 #projetos{
   background: black;
   text-align: center;
   padding: 80px;
+
   padding-top: 80px;
+
   margin: 0;
   color: rgb(255, 255, 255);
   display: block;
@@ -91,6 +102,7 @@ section .formacoes-descricao h3{
 #projetos-titulo{
   padding-bottom: 40px;
 }
+
 .projetos-descricao a{
   text-decoration: none;
   color: white;
@@ -116,12 +128,13 @@ section .projetos-descricao{
   margin-top: 30px;
   display: block;
 }
-
 #separador{
   margin-right: 0;
   padding-bottom: 0;
   width: 100%;
+
   height: 200px; 
+
 }
 /* FOOTER */
 footer {
