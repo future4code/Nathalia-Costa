@@ -43,15 +43,72 @@
 // __proto__: Array(0)
 
 // c.1. Qual seria imprimido no console se a variável `numero` tivesse o valor de `3`? 
-// Os valores que são divisiveis por 03 (12, 15, 18, 21, 27, 30). 
-// c.2.E se tivesse o valor de `4`?
+// Os valores que são divisiveis por 03, ou seja, [12, 15, 18, 21, 27, 30]. 
+// c.2.E se tivesse o valor de `4`? O valores divisiveis por 4, ou seja, 0: [12].
 
-const lista = [10, 11, 12, 15, 18, 19, 21, 23, 25, 27, 30]
-const novaLista = []
-const numero = 3
-for(const item of lista){
-  if(item%numero === 0) {
-    novaLista.push(item)
-  }
+//Exercícios de escrita de código
+
+//EXERCÍCIO 3
+
+// Nas perguntas abaixo, considere que você tenha acesso a um `array`  (chamado de 'array original') 
+// que seja composto somente de números. Após o enunciado, há um exemplo de qual deve ser a resposta final de cada programa individualmente.
+
+// a. Escreva um programa que devolva o maior e o menor números contidos no array original
+
+const arrayO = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+let maior = arrayO[0]
+let menor = arrayO[0]
+
+for (let indice of arrayO){
+    if (indice > maior){
+        maior = indice
+    }
 }
-console.log(novaLista)
+for(let indice of arrayO){
+    if(indice < menor)
+    menor = indice
+}
+
+console.log("O maior número é "+maior+" e o menor é "+menor)
+// const numeros = [11, 15, 18, 14, 12, 13]
+// let maior = numeros[0]
+
+// for(let i = 0; i = numeros.length; i++){
+//     const elemento = numeros[i]
+//     if(elemento > maior){
+//         maior = elemento;
+//     }
+// }
+// console.log("O numero é maior "+maior)
+
+// b. Escreva um programa que devolva um novo array contendo todos os valores do array original divididos por 10.
+
+// c. Escreva um programa que devolva um novo array contendo, somente, os números pares do array original.
+
+// d. Escreva um programa que gere um novo array contendo strings, da seguinte forma: "O elemento do índex i é: numero"
+
+// // Este array será usado para exemplificar as respostas de todos os itens
+// const array = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+    
+// // Resposta a.
+// "O maior número é 130 e o menor é 21"
+
+// // Resposta item b.
+// [8, 3, 13, 4, 6, 2.1, 7, 12, 9, 10.3, 11, 5.5]
+
+// // Resposta item c.
+// [80, 30, 130, 40, 60, 70, 120, 90, 110] 
+
+// // Resposta item d.
+// [ 'O elemento do índex 0 é 80',
+//   'O elemento do índex 1 é 30',
+//   'O elemento do índex 2 é 130',
+//   'O elemento do índex 3 é 40',
+//   'O elemento do índex 4 é 60',
+//   'O elemento do índex 5 é 21',
+//   'O elemento do índex 6 é 70',
+//   'O elemento do índex 7 é 120',
+//   'O elemento do índex 8 é 90',
+//   'O elemento do índex 9 é 103',
+//   'O elemento do índex 10 é 110',
+//   'O elemento do índex 11 é 55' ]
