@@ -50,38 +50,35 @@
 
 //EXERCÍCIO 3
 
-// Nas perguntas abaixo, considere que você tenha acesso a um `array`  (chamado de 'array original') 
-// que seja composto somente de números. Após o enunciado, há um exemplo de qual deve ser a resposta final de cada programa individualmente.
-
 // a. Escreva um programa que devolva o maior e o menor números contidos no array original
+//RESPOSTA
+// const arrayO = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+// let maior = arrayO[0]
+// let menor = arrayO[0]
 
-const arrayO = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
-let maior = arrayO[0]
-let menor = arrayO[0]
-
-for (let indice of arrayO){
-    if (indice > maior){
-        maior = indice
-    }
-}
-for(let indice of arrayO){
-    if(indice < menor)
-    menor = indice
-}
-
-console.log("O maior número é "+maior+" e o menor é "+menor)
-// const numeros = [11, 15, 18, 14, 12, 13]
-// let maior = numeros[0]
-
-// for(let i = 0; i = numeros.length; i++){
-//     const elemento = numeros[i]
-//     if(elemento > maior){
-//         maior = elemento;
+// for (let indice of arrayO){
+//     if (indice > maior){
+//         maior = indice
 //     }
 // }
-// console.log("O numero é maior "+maior)
+// for(let indice of arrayO){
+//     if(indice < menor)
+//     menor = indice
+// }
+// console.log("O maior número é "+maior+" e o menor é "+menor) //"impressão do console: O maior número é 130 e o menor é 21"
 
 // b. Escreva um programa que devolva um novo array contendo todos os valores do array original divididos por 10.
+//RESPOSTA
+let arrayO = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+let novaArray = []
+
+for(let indice of arrayO){
+    indice/= 10
+    novaArray.push = (indice)
+}
+console.log(novaArray)
+
+//Só imprimiu o ultimo numero T-T
 
 // c. Escreva um programa que devolva um novo array contendo, somente, os números pares do array original.
 
