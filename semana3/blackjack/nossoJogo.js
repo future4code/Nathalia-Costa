@@ -15,7 +15,7 @@ console.log("Bem vindo ao jogo de Blackjack!")
 let valorUsuario = 0;
 let valorPc = 0;
 let cartasUsuarios = "Usuário - cartas: ";
-let cartasPc = " Computador - cartas: ";
+let cartasPc = "Computador - cartas: ";
 
 if(confirm("Quer iniciar uma nova rodada?")) {
    for(let i = 0; i < 2; i++){
@@ -27,7 +27,8 @@ if(confirm("Quer iniciar uma nova rodada?")) {
       cartasPc = cartasPc + carta2.texto;
       valorPc = valorPc + carta2.valor;
    }
-   console.log(cartasUsuarios+" - Pontuação ", valorUsuario,cartasPc+" - Pontuação ", valorPc);
+   console.log(cartasUsuarios+" - Pontuação ", valorUsuario)
+   console.log(cartasPc+" - Pontuação ", valorPc);
    if(valorUsuario > valorPc){
       console.log("O usuario ganhou")
    }
