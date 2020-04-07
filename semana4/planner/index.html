@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="index.js"></script>
+    <link href="index.css" type="text/css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Planejamento Semanal</h1>
+    </header>
+    <main>
+      
+      <section id="abaAdicionar">
+        <input type="text" placeholder="Digite sua tarefa" id="novaTarefa" value="">
+        <select name="diasDaSemana">
+          <option value="SEG">Segunda</option>
+          <option value="TER">Terça</option>
+          <option value="QUA">Quarta</option>
+          <option value="QUI">Quinta</option>
+          <option value="SEX">Sexta</option>
+          <option value="SAB">Sábado</option>
+          <option value="DOM">Domingo</option>
+        </select> 
+        <button onclick="adicionarTarefa()">Adicionar Tarefa</button>
+        <div id="espacotexto"></div>
+      </section>
+      <section>
+        <article>
+        <h4>Segunda</h4>
+      </article>
+      <article>
+        <h4>Terça</h4>
+      </article>
+      <article>
+        <h4>Quarta</h4>
+      </article>
+      <article>
+        <h4>Quinta</h4>
+      </article>
+      <article>
+        <h4>Sexta</h4>
+      </article>
+      <article>
+        <h4>Sábado</h4>
+      </article>
+      <article>
+        <h4>Domingo</h4>
+      </article>
+      </section>
+    </main>
+  </body>
+</html>
