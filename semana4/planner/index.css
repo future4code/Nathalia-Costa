@@ -1,0 +1,48 @@
+*{
+    margin: 0; 
+    padding: 0; 
+    font-family:'Patrick Hand', cursive;
+}
+body{
+    padding: 30px;
+    width: 95vw;
+    height: 80vh;
+    background-image: url(ceu.jpg);
+    color: rgb(35, 159, 216);
+}
+header{
+    text-align: center;
+    padding-bottom: 5%;
+    font-size: 1.5rem;
+}
+#abaAdicionar{
+    background-color: rgb(0, 93, 136);
+    border-radius: 10px;
+    height: 20vh;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.tamanhoAba{
+    height: 30px;
+}
+main{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    font-family:'Patrick Hand', cursive;
+}
+article{
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 20vh;
+    background-color: rgb(35, 159, 216);
+    color: white;
+}
+h4{
+    font-size: 1.5rem;
+}
+ul{
+    padding-left: 25px;
+}
