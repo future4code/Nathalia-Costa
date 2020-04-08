@@ -33,12 +33,10 @@ main{
     display: grid;
     grid-template-rows: 1fr 2fr;
 }
-#post{
-    background-image: none;
-    border: none;
-    color: black;
-    padding-top: 60px;
+h4{
+    padding-top: 30px;
     text-align: center;
+    font-size: 1.5rem;
 }
 article{
     padding: 10px;
@@ -49,8 +47,19 @@ article{
     background-image: url(ceu.jpg);
     color: white;
 }
-h4{
-    padding-top: 30px;
+#post{
+    background-image: none;
+    border: none;
+    color: black;
+    padding-top: 60px;
     text-align: center;
-    font-size: 1.5rem;
+}
+ul{
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+img{
+    width: 40%;
+    height: auto;
 }
