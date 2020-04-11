@@ -1,10 +1,10 @@
 // Exercício de Leitura de código
 // Analisar, escrever o que ele faz, como faz e qual será o valor impresso no console.
 
-// 1. Ele converte o valor em Dolar para Reais. Ele solicita qual o valor da cotação 
-// do dolar através de um Prompt e dar um return com o valor indicado na função * a 
-// cotação enviada no Prompt. Mostrada no conlose pela variavel meuDinheiro que 
-// apresenta o valor final da multiplicação.
+/* 1. Ele converte o valor em Dolar para Reais. Ele solicita qual o valor da cotação 
+do dolar através de um Prompt e dar um return com o valor indicado na função * a 
+cotação enviada no Prompt. Mostrada no conlose pela variavel meuDinheiro que 
+apresenta o valor final da multiplicação. */
 
 /* 2. function investeDinheiro tem duas variaveis uma para saber qual tipo de investimento
 e outra o valor a ser investido. Com um Switch ele analisa qual foi o tipo de investimento 
@@ -22,3 +22,13 @@ com os impares.
 
 /* 4. O number infinity é qualquer número positivo. Ou seja, nesse código ele vai procurar qual número não
 é menor que infinity. Dando ao número1 o valor de -10 e o número2 o seu maior número 1590.*/
+
+// Exercícios de lógica de programação
+
+/* 1. Quais são os valores das expressões lógicas...
+
+a. false;
+b. false;
+c. true;
+d. true;
+e. true;
