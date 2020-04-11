@@ -32,3 +32,18 @@ b. false;
 c. true;
 d. true;
 e. true;
+*/
+
+/* 2. */
+
+let array = []
+const quantidadeDeNumerosPares = prompt("Digite um número");
+let i = 0
+
+while(i < quantidadeDeNumerosPares) {
+  console.log(i*2)
+  if(i%2 === 0){
+    array.push(i)
+  }
+  i++
+}
