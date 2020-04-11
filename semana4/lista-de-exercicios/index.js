@@ -19,3 +19,6 @@ numeros e logo abaixo há um for...of para que os numeros dessa arrays sejam div
 Com isso o console.log("Quantidade (...), numeros.length") imprimirá a quantidade total de número 
 na array numeros. Os demais consoles exibirão a quantidade de numeros da array1 com pares e da array2 
 com os impares.
+
+/* 4. O number infinity é qualquer número positivo. Ou seja, nesse código ele vai procurar qual número não
+é menor que infinity. Dando ao número1 o valor de -10 e o número2 o seu maior número 1590.*/
