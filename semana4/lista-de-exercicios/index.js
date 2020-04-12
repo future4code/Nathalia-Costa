@@ -49,7 +49,7 @@ while(i < quantidadeDeNumerosPares) {
   i++
 }
 */
-/* 3. Trigonometria */
+/* 3. Trigonometria 
 let lado1 = prompt("Digite o tamanho do lado 1");
 let lado2 = prompt("Digite o tamanho do lado 2");
 let lado3 = prompt("Digite o tamanho do lado 3");
@@ -63,4 +63,17 @@ function triangulo(lado1, lado2, lado3){
     console.log("Seu triângulo é Equilátero");
   }
 }
-triangulo(lado1, lado2, lado3)
+triangulo(lado1, lado2, lado3) */
+
+/* 4. */ 
+
+function numeros(numeroUm, numeroDois){
+  if((numeroUm < numeroDois) && (numeroUm%numeroDois !== 0)){
+    console.log("O maior é: "+numeroDois)
+    console.log(numeroUm+" não é divisível por "+numeroDois)
+  } else
+  if((numeroUm > numeroDois) && (numeroDois%numeroUm === 0)){
+    console.log("O maior é: "+numeroUm)
+  }
+}
+numeros(15,30)
