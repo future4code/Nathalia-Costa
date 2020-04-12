@@ -34,7 +34,8 @@ d. true;
 e. true;
 */
 
-/* 2. */
+/* 2. O código dado não funciona, não determinava um array, a condição if se for par e havia um <= dando um 
+número a mais. Abaixo está o código com as devidas correções ...
 
 let array = []
 const quantidadeDeNumerosPares = prompt("Digite um número");
@@ -47,3 +48,19 @@ while(i < quantidadeDeNumerosPares) {
   }
   i++
 }
+*/
+/* 3. Trigonometria */
+let lado1 = prompt("Digite o tamanho do lado 1");
+let lado2 = prompt("Digite o tamanho do lado 2");
+let lado3 = prompt("Digite o tamanho do lado 3");
+
+function triangulo(lado1, lado2, lado3){
+  if(lado1 === lado2 && lado2 !== lado3 || lado2 === lado3 && lado1 !== lado3 || lado1 === lado3 && lado1!==lado2){
+    console.log("Seu triângulo é Isósceles");
+  } else if(lado1 !== lado2 && lado2 !== lado3 && lado1 !== lado3){
+    console.log("Seu triângulo é Escaleno");
+  } else {
+    console.log("Seu triângulo é Equilátero");
+  }
+}
+triangulo(lado1, lado2, lado3)
