@@ -96,3 +96,8 @@ function analiseDeArray(array){
 }
 analiseDeArray(array)
 */
+
+// Exercício de Objetos
+/* 1. Arrays são armazenamentos de informações e objetos são 
+amazenamento de informações com categorias. Um objeto pode ser 
+guardado dentro de uma array*/
