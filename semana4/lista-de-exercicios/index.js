@@ -1,3 +1,4 @@
+// Aula 14 - DOM
 // Exercício de Leitura de código
 // Analisar, escrever o que ele faz, como faz e qual será o valor impresso no console.
 
@@ -65,7 +66,7 @@ function triangulo(lado1, lado2, lado3){
 }
 triangulo(lado1, lado2, lado3) */
 
-/* 4. */ 
+/* 4. IMCOMPLETO
 
 function numeros(numeroUm, numeroDois){
   if((numeroUm < numeroDois) && (numeroUm%numeroDois !== 0)){
@@ -76,4 +77,22 @@ function numeros(numeroUm, numeroDois){
     console.log("O maior é: "+numeroUm)
   }
 }
-numeros(15,30)
+numeros(15,30)*/ 
+
+// Aula 15 - Ojetos, Strings e Arrays
+// Exercícios de Funções
+
+/* 1. INCOMPLETA
+
+const array = [15, 12, 17, 19, 10]
+function analiseDeArray(array){
+  let numberDois = 1
+  for(let numero of array){
+    if(numero > numberDois){
+      console.log(numero)
+    }
+    numberDois++
+  }
+}
+analiseDeArray(array)
+*/
