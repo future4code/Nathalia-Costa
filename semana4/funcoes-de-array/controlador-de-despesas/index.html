@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="index.js"></script>
+    <link href="index.css" type="text/css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section>
+      <h1>Controlador de Despesas</h1>
+      <h4>Cadastrar despesa</h4>
+      <label for="">Valor</label>
+      <input id="valor" type="text" placeholder="Informe o valor da despesa">
+      <label for="">Tipo</label>
+      <select id="tipo">
+        <option value="----"> ---- </option>
+        <option value="Alimentação">Alimentação</option>
+        <option value="Transporte">Transporte</option>
+        <option value="Lazer">Lazer</option>
+        <option value="Outros">Outros</option>
+      </select>
+      <label for="">Descrição</label>
+      <textarea id="descricao" placeholder="Descreva sua despesas aqui..."></textarea>
+      <button onclick="despesasCadastradas()">Cadastrar Despesa</button>
+    </section>
+    <section>
+      <h1>Despesas Detalhadas</h1>
+      <label for="">Tipo</label>
+      <select>
+        <option value=""> ---- </option>
+        <option value="">Alimentação</option>
+        <option value="">Transporte</option>
+        <option value="">Lazer</option>
+        <option value="">Outros</option>
+      </select>
+      <label for="">Valor Mínimo</label>
+      <input type="text">
+      <label for="">Valor Máximo</label>
+      <input type="text">
+      <button>Filtrar</button>
+      <button>Limpar Filtros</button>
+      <div id="mostrarDespesasCadastradas"></div>     
+    </section>
+    <section>
+      <h1>Extrato</h1>
+      <!-- <h3>Valor Total:</h3> -->
+    </section>
+  </body>
+</html>
