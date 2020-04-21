@@ -12,9 +12,6 @@ export class Etapa2 extends React.Component {
                         <input></input>
                         <h3>6. Qual instituição de ensino?</h3>
                         <input></input>
-                        <div>
-                        <button>Próxima etapa</button>
-                        </div>
                     </div>
                 </div>
             </div>

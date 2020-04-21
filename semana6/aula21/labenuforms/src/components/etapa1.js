@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+
 
 export class Etapa1 extends React.Component {
     render() {
@@ -21,9 +21,6 @@ export class Etapa1 extends React.Component {
                             <option>Ensino superior completo</option>
                             <option>Ensino superior incompleto</option>
                         </select>
-                        <div>
-                        <button>Próxima etapa</button>
-                        </div>
                     </div>
                 </div>
             </div>
