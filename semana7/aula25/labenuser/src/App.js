@@ -1,56 +1,37 @@
 import React from 'react';
 import Home from './Components/Home'
-import UserCadastrados from './Components/UsersCadastrados'
+import Users from './Components/Users'
 import './App.css';
-import axios from 'axios';
 import styled from 'styled-components'
-import UsersCadastrados from './Components/UsersCadastrados';
 
 const Botao = styled.button`
   display: flex;
   justify-content: flex-start;
   gap: 8px;
+  width: 150px;
+  height: 50px;
+  text-align: center;
 `;
 
 class App extends React.Component {
   state = {
-    usuarios: [
-      {
-        "id": "3f5bd645-1678-4cf2-bcfe-e077b4d9bfb3",
-        "name": "Nathalia"
-    },
-    {
-        "id": "c3f3d598-076c-4f39-bc05-35e0724454f7",
-        "name": "Nathalie"
-    }
-    ]
+    currentPage: "HOME"
   };
-  
-  componentDidMount() {
-    this.pegarUser()
+
+  onClickNextPage = () => {
+    const nextPage = this.state.currentPage === "HOME" ? "LIST" : "HOME";
+
+    this.setState({ currentPage: nextPage });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <Botao onClick={this.onClickNextPage}> --> Próxima Pagina</Botao>
+        {this.state.currentPage === "HOME" ? <Home /> : <Users />}
+      </div>
+    );
   }
-
-  pegarUser = () => {
-    axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users', {
-      headers: {
-        Authorization: "nathalia-costa-julian"
-      }
-    }).then((resposta) => {
-      console.log(resposta)
-    }).catch((error) => {
-      console.log(error)
-    })
-}
-
-render(){
-  return (
-    <div className="App">
-      <Botao> --> </Botao>
-      <Home/>
-      <UsersCadastrados listaUsuarios={this.state.usuarios}/>
-    </div>
-  );
-}
 }
 
 export default App;
