@@ -1,18 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Nav from './components/Nav/Nav';
+import TelaPrincipal from './components/TelaPrincipal';
+
+
 const AppContainer = styled.div `
+  margin-top: 50px;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  border: 1px solid black;
-`
+  height: 80vh;
+  width: 65vw;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 20px;
+  background: #5dc1b9;
+`;
 
 function App() {
   return (
     <AppContainer>
-      console.log(oiii)
+      <Nav />
+      <TelaPrincipal/>
     </AppContainer>
   );
 }
