@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Nav from './components/Nav/Nav';
+import Nav from './components/NavBar/Nav';
 import TelaPrincipal from './components/TelaPrincipal';
 
 
