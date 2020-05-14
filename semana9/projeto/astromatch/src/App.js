@@ -1,28 +1,26 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState, useEffect } from 'react';
+import {AppContainer} from './components/Styled';
+import axios from 'axios';
 
 import Nav from './components/NavBar/Nav';
-import TelaPrincipal from './components/TelaPrincipal';
-
-
-const AppContainer = styled.div `
-  margin-top: 50px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 80vh;
-  width: 65vw;
-  margin-right: auto;
-  margin-left: auto;
-  border-radius: 20px;
-  background: #5dc1b9;
-`;
+import TelaPrincipal from './components/TelaInicial/TelaPrincipal';
+import Matches from './components/Matches/Matches';
 
 function App() {
+  const [secaoAtual, setSecaoAtual] = useState('Tela Principal');
+  
+  const onClickPage = () => {
+    const nextPage = secaoAtual === 'Tela Principal' ? 'Match' : 'Tela Principal';
+    setSecaoAtual(nextPage);
+  };
+
   return (
     <AppContainer>
-      <Nav />
-      <TelaPrincipal/>
+      <Nav 
+      onClick={onClickPage}
+      textButton={secaoAtual === 'Tela Principal' ? "Tela Principal" : "Ver Matches"}
+      />
+      {secaoAtual === 'Tela Principal' ? (<Matches />) : (<TelaPrincipal />)}
     </AppContainer>
   );
 }

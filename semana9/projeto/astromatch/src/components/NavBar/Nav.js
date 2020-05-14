@@ -1,24 +1,22 @@
 import React from 'react';
-import styled from 'styled-components';
+import { NavContainer, BoxTop, Logo, BoxBottom, ButtonVerMatches} from '../Styled'
 
 import Perfil from './Perfil';
-import Matches from './Matches'
+import Imagem from './logo/astromatch.png';
 
-const NavContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 30%;
-  height: 100%;
-  border-right: 1px dotted white;
-`;
-
-function Nav() {
+function Nav(props) {
   return (
-      <NavContainer>
+    <NavContainer>
+      <BoxTop>
+        <Logo src={Imagem} />
         <Perfil />
-        <Matches />
-      </NavContainer>
+      </BoxTop>
+      <BoxBottom>
+        <ButtonVerMatches variant="extended" onClick={props.onClick} >
+          {props.textButton}        
+        </ButtonVerMatches>
+      </BoxBottom>
+    </NavContainer>
   );
 }
 
