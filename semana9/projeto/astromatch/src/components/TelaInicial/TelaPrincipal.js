@@ -1,5 +1,5 @@
 import React from 'react';
-import { TelaContainer, Buttons, Cards, ImgCard, Pessoa, Descrição } from '../Styled';
+import { TelaContainer, Buttons, Cards, ImgCard, TextoCard, Pessoa, Descrição } from '../Styled';
 import Fab from '@material-ui/core/Fab';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import CloseIcon from '@material-ui/icons/Close';
@@ -11,8 +11,10 @@ function TelaPrincipal(props) {
     <TelaContainer>
       <Cards>
         <ImgCard src={props.urlImagem} />
-        <Pessoa>{props.nome} - {props.idade}</Pessoa>
-        <Descrição>{props.descricao}</Descrição>
+        <TextoCard>
+          <Pessoa>{props.nome}, {props.idade} anos</Pessoa>
+          <Descrição>{props.descricao}</Descrição>
+        </TextoCard>
       </Cards>
       <Buttons>
         <Fab aria-label="like" onClick={props.onClickLike}>

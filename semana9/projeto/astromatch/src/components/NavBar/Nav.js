@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavContainer, BoxTop, Logo, BoxBottom, ButtonVerMatches} from '../Styled'
+import { NavContainer, BoxTop, Logo, BoxBottom, ButtonNav} from '../Styled'
 
 import Perfil from './Perfil';
 import Imagem from './logo/astromatch.png';
@@ -12,9 +12,12 @@ function Nav(props) {
         <Perfil />
       </BoxTop>
       <BoxBottom>
-        <ButtonVerMatches variant="extended" onClick={props.onClick} >
+        <ButtonNav variant="extended" onClick={props.onClick} >
           {props.textButton}        
-        </ButtonVerMatches>
+        </ButtonNav>
+        <ButtonNav onClick={props.onClickResetar}>
+          Resetar
+        </ButtonNav>
       </BoxBottom>
     </NavContainer>
   );

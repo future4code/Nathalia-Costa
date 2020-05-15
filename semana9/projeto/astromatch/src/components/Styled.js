@@ -9,9 +9,10 @@ export const AppContainer = styled.div `
   border-radius: 20px;
   background: #5dc1b9;
 `;
+//Tela Principal
 export const TelaContainer = styled.div`
   height: 100%;
-  width: 75%;
+  width: 70%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -19,7 +20,7 @@ export const TelaContainer = styled.div`
 `;
 export const Buttons = styled.div`
   height: 100%;
-  width: 20%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -27,43 +28,40 @@ export const Buttons = styled.div`
 `;
 export const Cards = styled.div`
   height: 95%;
-  width: 75%;
+  width: 80%;
   display: flex;
   flex-direction: column;
-  align-items:center;
-  background: #dcdcdc;
-  border-radius: 20px;
+  justify-items: center;
+  align-items: center;
 `;
 export const ImgCard = styled.img`
-  height: 90%;
-  width: 80%;
+  height: 98%;
+  width: 90%;
+  justify-self: center;
   border-radius: 20px;
-  margin-top: 3.5%;
+`;
+export const TextoCard = styled.div`
+  position: relative;
+  margin-top: -25%;
+  width: 85%;
+  height: 10%;
 `;
 export const Pessoa = styled.p`
-  height: 5%;
-  width: 70%;
-  align-self: flex-start;
-  margin-left: 20%;
-  margin-top: -12%;
+  height: 10%;
   color: #dcdcdc;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-shadow: black 0.1em 0.1em 0.2em;
 `;
 export const Descrição = styled.p`
-  height: 5%;
-  width: 80%;
-  align-self: flex-start;
-  margin-left: 20%;
-  margin-top: -4%;
-  width: 60%;
+  height: 10%;
   color: #dcdcdc;
-  font-size: 1rem;
+  font-size: 1.4rem;
   text-shadow: black 0.1em 0.1em 0.2em;
 `;
+//Tela de Matches
 export const MatchesContainer = styled.div`
-  width: 75%;
+  width: 70%;
   height: 95%;
   text-align: center;
   display: flex;
@@ -106,51 +104,7 @@ export const ImgMatch = styled.img`
 export const ButtonResetar = styled.div`
   height: 15%;
 `;
-export const PerfilContainer = styled.div`
-  margin-top: 4%;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-`;
-export const MeusDados = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content:space-evenly;
-  height: 30%;
-  width: 95%;
-`;
-export const Avatar = styled.img`
-  height: 80%;
-  width: 30%;
-  align-self: center;
-  border-radius: 35px;
-`;
-export const Infos = styled.p`
-  margin-left: 10px;
-  align-self: center;
-  font-size: 1.5rem;
-`;
-export const SobreMim = styled.div`
-  height: 80%;
-  width: 95%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-export const Instagram = styled.p`
-`;
-export const MinhasFotos = styled.div`
-  height: 20%;
-  display: grid;
-  grid-template-columns:repeat(3, 1fr);
-  grid-gap: 4px;
-  align-items: center;
-`;
-export const Fotos = styled.img`
-  border-radius: 5px;
-  height: 100%;
-`;
+//Nav
 export const NavContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -179,8 +133,59 @@ export const BoxBottom = styled.div`
   height: 10%;
   width: 100%;
 `;
-export const ButtonVerMatches = styled.button`
+export const ButtonNav = styled.button`
   border-radius: 40px;
   width: 40%;
   height: 70%;
+`;
+//Perfil
+export const PerfilContainer = styled.div`
+  margin: 4%;
+  height: 100%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  background: #dcdcdc;
+  border-radius: 15px; 
+`;
+export const MeusDados = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content:space-evenly;
+  height: 30%;
+  width: 95%;
+`;
+export const Avatar = styled.img`
+  height: 80%;
+  width: 30%;
+  align-self: center;
+  border-radius: 35px;
+`;
+export const Infos = styled.p`
+  margin-left: 10px;
+  align-self: center;
+  font-size: 1.5rem;
+`;
+export const SobreMim = styled.div`
+  height: 80%;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+export const MinhaDescricao = styled.p`
+  font-weight: bold;
+`;
+export const Instagram = styled.p`
+`;
+export const MinhasFotos = styled.div`
+  height: 40%;
+  display: grid;
+  grid-template-columns:repeat(3, 1fr);
+  grid-gap: 4px;
+  align-items: center;
+`;
+export const Fotos = styled.img`
+  border-radius: 5px;
+  height: 60px;
 `;
