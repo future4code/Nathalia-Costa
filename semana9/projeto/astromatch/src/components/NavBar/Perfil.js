@@ -1,5 +1,5 @@
 import React from 'react';
-import {PerfilContainer , MeusDados, Avatar, Infos, SobreMim, MinhasFotos, Fotos} from '../Styled'
+import {PerfilContainer , MeusDados, Avatar, Infos, SobreMim, Instagram, MinhasFotos, Fotos} from '../Styled'
 
 
 function Perfil() {
@@ -12,7 +12,7 @@ function Perfil() {
       </MeusDados>
       <SobreMim>
         <p>Oii, nem sei porque estou aqui. hihi</p>
-        <p><b>Instagram</b>, @neytirii</p>
+        <Instagram><b>Instagram</b>, @neytirii</Instagram>
         <MinhasFotos>
           <Fotos src={"https://picsum.photos/400/400?a=1"} />
           <Fotos src={"https://picsum.photos/400/400?a=2"} />
@@ -20,8 +20,6 @@ function Perfil() {
           <Fotos src={"https://picsum.photos/400/400?a=4"} />
           <Fotos src={"https://picsum.photos/400/400?a=5"} />
           <Fotos src={"https://picsum.photos/400/400?a=6"} />
-          <Fotos src={"https://picsum.photos/400/400?a=7"} />
-          <Fotos src={"https://picsum.photos/400/400?a=8"} />
         </MinhasFotos>
         {/*LISTA DE INFORMAÇÕES SOBRE O PERFIL*/}
       </SobreMim>

@@ -1,23 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import axios from "axios";
-import { TelaContainer, Buttons } from '../Styled';
-import Card from './Cards';
+import React from 'react';
+import { TelaContainer, Buttons, Cards, ImgCard, Pessoa, Descrição } from '../Styled';
 import Fab from '@material-ui/core/Fab';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import CloseIcon from '@material-ui/icons/Close';
 
 
+function TelaPrincipal(props) {
 
-function TelaPrincipal() {
   return (
     <TelaContainer>
-      <Card />
+      <Cards>
+        <ImgCard src={props.urlImagem} />
+        <Pessoa>{props.nome} - {props.idade}</Pessoa>
+        <Descrição>{props.descricao}</Descrição>
+      </Cards>
       <Buttons>
-        <Fab aria-label="like">
+        <Fab aria-label="like" onClick={props.onClickLike}>
           <FavoriteIcon fontSize="large" />
         </Fab>
         <Fab aria-label="deslike">
-          <CloseIcon fontSize="large" />
+          <CloseIcon fontSize="large" onClick={props.onClickDeslike}/>
         </Fab>
       </Buttons>
     </TelaContainer>

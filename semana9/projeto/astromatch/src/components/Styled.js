@@ -30,7 +30,6 @@ export const Cards = styled.div`
   width: 75%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items:center;
   background: #dcdcdc;
   border-radius: 20px;
@@ -39,20 +38,25 @@ export const ImgCard = styled.img`
   height: 90%;
   width: 80%;
   border-radius: 20px;
+  margin-top: 3.5%;
 `;
 export const Pessoa = styled.p`
+  height: 5%;
+  width: 70%;
   align-self: flex-start;
   margin-left: 20%;
-  margin-top: -18%;
+  margin-top: -12%;
   color: #dcdcdc;
   font-weight: bold;
   font-size: 2rem;
   text-shadow: black 0.1em 0.1em 0.2em;
 `;
 export const Descrição = styled.p`
+  height: 5%;
+  width: 80%;
   align-self: flex-start;
   margin-left: 20%;
-  margin-top: -5%;
+  margin-top: -4%;
   width: 60%;
   color: #dcdcdc;
   font-size: 1rem;
@@ -74,13 +78,30 @@ export const MatchesDiv = styled.div`
   margin-top: 20px;
 `;
 export const CardChips = styled.div`
+  display: grid;
+  grid-template-columns:repeat(3, 2fr);
+  grid-gap: 3px;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  height: 95%;
+  width: 95%;
+`;
+export const CardMatch = styled.div`
   display: flex;
   flex-direction: column;
-  justify-self: center;
-  width: 90%;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+  width: 150px;
   background: #dcdcdc;
   border-radius: 15px;
   margin: 5px;
+`;
+export const ImgMatch = styled.img`
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
 `;
 export const ButtonResetar = styled.div`
   height: 15%;
@@ -88,6 +109,7 @@ export const ButtonResetar = styled.div`
 export const PerfilContainer = styled.div`
   margin-top: 4%;
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 `;
@@ -96,6 +118,7 @@ export const MeusDados = styled.div`
   flex-direction: row;
   justify-content:space-evenly;
   height: 30%;
+  width: 95%;
 `;
 export const Avatar = styled.img`
   height: 80%;
@@ -110,15 +133,18 @@ export const Infos = styled.p`
 `;
 export const SobreMim = styled.div`
   height: 80%;
+  width: 95%;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
+export const Instagram = styled.p`
+`;
 export const MinhasFotos = styled.div`
   height: 20%;
   display: grid;
-  grid-template-columns:repeat(4, 1fr);
-  grid-gap: 6px;
+  grid-template-columns:repeat(3, 1fr);
+  grid-gap: 4px;
   align-items: center;
 `;
 export const Fotos = styled.img`
