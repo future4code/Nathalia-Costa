@@ -48,12 +48,15 @@ function App() {
       )
       .then((response) => {
         setLike(response.data.isMatch)
-        pegarPessoa(setListaDePessoas)
+        if(response.data.isMatch === true){
+          alert("Deu Match!")
+        }
         console.log("Click ", response.data.isMatch);
       })
       .catch((error) => {
         console.log("Deu erro ", error.response);
       });
+    pegarPessoa()
   };
   
   const mostrarMatch = () => {
@@ -94,7 +97,7 @@ function App() {
 
   useEffect(() => {
     pegarPessoa(setListaDePessoas);
-    mostrarMatch()
+    mostrarMatch(setListaDeMatch)
   }, [setListaDeMatch]);
 
   return (

@@ -77,7 +77,7 @@ export const MatchesDiv = styled.div`
 `;
 export const CardChips = styled.div`
   display: grid;
-  grid-template-columns:repeat(3, 2fr);
+  grid-template-columns:repeat(4, 2fr);
   grid-gap: 3px;
   align-items: center;
   justify-content: center;
