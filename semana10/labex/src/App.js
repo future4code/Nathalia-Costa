@@ -1,8 +1,13 @@
 import React from "react";
-import Router from "./components/Router";
+import RouterLogin from "./components/Router/RouterLogin";
+import { AppContainer } from "./pages/styled";
 
 function App() {
-  return <Router />;
+  return(
+    <AppContainer>
+      <RouterLogin />
+    </AppContainer>
+  );
 }
 
 export default App;

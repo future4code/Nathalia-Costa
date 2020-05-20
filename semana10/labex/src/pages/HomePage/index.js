@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../logo-labex.jpg';
+import Logo from '../Logo2.png';
 import { HomeContainer, NavHome, ButtonLogin, BodyHome, ImgLogo, ButtonVerViagens } from '../styled'
 import { useHistory } from 'react-router-dom';
 
@@ -7,7 +7,7 @@ const HomePage = () => {
     const history = useHistory();
 
     const goToLoginPage = () => {
-        history.push("/login-page")
+        history.push("/login")
     }
     const goToListTripsPage = () => {
         history.push("/list-trips-page")
