@@ -10,7 +10,7 @@ const HomePage = () => {
         history.push("/login")
     }
     const goToListTripsPage = () => {
-        history.push("/list-trips-page")
+        history.push("/list-trips")
     }
     return (
         <HomeContainer>
@@ -21,7 +21,6 @@ const HomePage = () => {
                 <ImgLogo src={Logo}/>
                 <ButtonVerViagens onClick={goToListTripsPage}>VER VIAGENS DISPONIVEIS</ButtonVerViagens>
             </BodyHome>
-            
         </HomeContainer>
     );
 };

@@ -1,11 +1,11 @@
 import React from "react";
-import RouterLogin from "./components/Router/RouterLogin";
+import Router from "./components/Router";
 import { AppContainer } from "./pages/styled";
 
 function App() {
   return(
     <AppContainer>
-      <RouterLogin />
+      <Router />
     </AppContainer>
   );
 }

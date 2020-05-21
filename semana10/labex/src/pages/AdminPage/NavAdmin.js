@@ -13,7 +13,7 @@ const NavAdmin = () => {
       history.push("/logado/create-trips-page");
     };
     const goToOut = () => {
-      history.push("/login");
+      history.push("/out");
     };
   return (
       <NavContainer>
@@ -23,7 +23,7 @@ const NavAdmin = () => {
             <ButtonNav onClick={goToCreateTripsPage}>Criar Viagem</ButtonNav>
             <ButtonNav onClick={goToOut}>Sair</ButtonNav>
         </ButtonsNav>
-        </NavContainer>
+      </NavContainer>
   );
 };
 

@@ -1,15 +1,18 @@
 import React from "react";
-import { AdminContainer, TripsContainer, TripsCard } from "../styled";
+import { Container, AdminContainer, TripsContainer, TripsCard } from "../styled";
+import NavAdmin from "./NavAdmin";
 
 const AdminPage = () => {
-
   return (
+    <Container>
+      <NavAdmin />
       <AdminContainer>
         <h1>Minhas Viagens</h1>
         <TripsContainer>
-          <TripsCard/>
+          <TripsCard />
         </TripsContainer>
       </AdminContainer>
+    </Container>
   );
 };
 

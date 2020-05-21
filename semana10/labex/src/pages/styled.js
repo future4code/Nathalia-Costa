@@ -7,6 +7,9 @@ export const AppContainer = styled.div`
     @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
     font-family: 'Roboto', sans-serif;
 `;
+export const Container = styled.div`
+    background-image: url(${back});
+`;
 
 //Home Page
 export const HomeContainer = styled.div`
@@ -107,7 +110,7 @@ export const RotarContainer = styled.div`
 // NavAdmin
 export const NavContainer = styled.div`
     padding: 0 40px;
-    height: 10%;
+    height: 10vh;
     color: white;
     background: transparent;
     display: flex;
@@ -138,7 +141,7 @@ export const ButtonNav = styled.button`
 `;
 // Admin Page
 export const AdminContainer = styled.div`
-    height: 85%;
+    height: 90vh;
     padding-left: 40px;
     display: flex;
     flex-direction: column;
@@ -164,10 +167,10 @@ export const TripsCard = styled.div`
 
 // Request Page
 export const RequestContainer = styled.div`
+    height: 90vh;
+    padding-left: 40px;
     background: transparent;
     color: white;
-    height: 85%;
-    padding-left: 40px;
 `;
 export const RequestCard = styled.div`
     height: 300px;
@@ -203,11 +206,11 @@ export const ButtonRequest = styled.button`
     margin: 10px;
 `;
 // Create Trips Page
-export const CreateTripsConstainer = styled.div`
+export const CreateTripsContainer = styled.div`
+    height: 90vh;
+    padding-left: 40px;
     background: transparent;
     color: white;
-    height: 85%;
-    padding-left: 40px;
 `;
 export const CreateCard = styled.div`
     margin-top: 15px;
@@ -216,4 +219,33 @@ export const CreateCard = styled.div`
     align-items: flex-start;
     justify-content: center;
     color: white;
+`;
+// List Trips Page
+export const ListTripsContainer = styled.div`
+    background-image: url(${back});
+    color: white;
+    height: 100vh;
+    padding: 40px;
+`;
+//Inscrição Page
+export const InscricaoContainer = styled.div`
+    background-image: url(${back});
+    color: white;
+    height: 100vh;
+    padding: 0px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
+export const CardInscricao = styled.div`
+    height: 400px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px solid white;
+    border-radius: 10px;
+    background: transparent;
 `;

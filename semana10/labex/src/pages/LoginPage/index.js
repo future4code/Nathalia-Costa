@@ -10,8 +10,12 @@ const Login = () => {
         history.push("/logado")
         alert("Olá Labenauta, \nVocê será redirecionado para sua Page Administrativa!!")
     }
+    const pageInicial = () => {
+        history.push("/");
+      };
     return (
         <LoginContainer>
+            <button onClick={pageInicial}>Voltar</button>
             <ImgLogoLogin src={LogoLogin}/>
             <BoxLogin>
                 <TextLogin>Login</TextLogin>
@@ -20,6 +24,7 @@ const Login = () => {
                 <LinkRecuperarSenha>Esqueci a senha</LinkRecuperarSenha>
                 <ButtonSingIn onClick={goToAdminPage}>Sign in</ButtonSingIn>
             </BoxLogin>
+            
         </LoginContainer>
     );
 };
