@@ -11,14 +11,14 @@ import RequestsPage from "../../pages/RequestsPage";
 import CreateTripsPage from "../../pages/CreateTripsPage";
 import InscricaoPage from "../../pages/InscricaoPage";
 
-const RouterLogin = () => {
+const Router = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter key={Router}>
       <Switch>
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route exact path="/list-trips">
+        <Route exact path="/list-trips" >
           <ListTripsPage />
         </Route>
         <Route exact path="/list-trips/inscricao">
@@ -47,4 +47,4 @@ const RouterLogin = () => {
   );
 };
 
-export default RouterLogin;
+export default Router;

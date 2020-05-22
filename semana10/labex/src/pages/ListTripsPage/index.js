@@ -28,7 +28,7 @@ const ListTrips = () => {
       });
   }, [setTripList]);
   return (
-    <ListTripsContainer>
+    <ListTripsContainer >
       <button onClick={pageInicial}>Pagina inicial</button>
       <button onClick={pageInscricao}>Inscreva-se</button>
       <h1>Viagens disponiveis</h1>

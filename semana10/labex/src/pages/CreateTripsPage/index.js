@@ -17,6 +17,15 @@ const CreateTripsPage = () => {
         <CreateCard>
           <input type={"text"} placeholder={"Nome"} />
           <input type={"text"} placeholder={"Planeta"} />
+          <select>
+              <option>Mercúrio</option>
+              <option>Vênus</option>
+              <option>Marte</option>
+              <option>Júpiter</option>
+              <option>Saturno</option>
+              <option>Urano</option>
+              <option>Neturno</option>
+          </select>
           <input type={"date"} placeholder={"Data"} />
           <input type={"number"} placeholder={"Duração em dias"} />
           <textarea placeholder={"Descrição"} />

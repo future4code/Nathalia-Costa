@@ -7,6 +7,7 @@ import LogoLogin from '../Logo2.png';
 const Login = () => {
     const [emailValue, setEmail] = useState("");
     const [senhaValue, setSenha] = useState("");
+    const [LoginValue, setLogin] = useState("")
 
     const onChangeEmail = event => {
         setEmail(event.target.value)
@@ -14,21 +15,13 @@ const Login = () => {
     const onChangeSenha = event => {
         setSenha(event.target.value)
     };
-    // const onClickSingin = () => {
-    //     const login = {
-    //         email: emailValue,
-    //         password: senhaValue 
-    //     };
-    //     console.log(login)
-    //     history.push("/logado")
-    //     alert(`Olá ${emailValue}, \nVocê será redirecionado para sua Page Administrativa!!`)
-    // };
+
     const history = useHistory();
     const pageInicial = () => {
         history.push("/");
       };
 
-    const fazerLogin = (emailValue, senhaValue) => {
+    const fazerLogin = () => {
         const body = {
             email: emailValue,
             password: senhaValue
@@ -39,18 +32,17 @@ const Login = () => {
             "https://us-central1-labenu-apis.cloudfunctions.net/labeX/nathalia-julian/login",
             body,
             {
-                headers: {
-                Authorization: "nathalia-julian"
-                }
-            }
-            )
+                headers: {'Content-Type': 'application/json'}
+            })
             .then(resposta => {
-            console.log(body);
-            history.push("/logado");
-            alert(`Olá ${emailValue}, \nVocê será redirecionado para sua Page Administrativa!!`);
+                setLogin(resposta.data);
+                console.log(resposta.data);
+                history.push("/logado");
+                alert(`Olá ${emailValue}, \nVocê será redirecionado para sua Page Administrativa!!`);
             })
             .catch(error => {
-            console.log("Deu erro");
+                alert("Você não possui cadastro com a gente :/")
+                console.log("Deu erro", error);
             });
     }
     return (

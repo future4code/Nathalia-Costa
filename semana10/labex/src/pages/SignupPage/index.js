@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from "axios";
-import { LoginContainer, TextLogin, BoxLogin, ImgLogoLogin, InputLogin, LinkRecuperarSenha, ButtonSingIn } from '../styled';
+import { LoginContainer, TextLogin, BoxLogin, ImgLogoLogin, InputLogin, ButtonSingIn } from '../styled';
 import LogoLogin from '../Logo2.png';
 
-const Login = () => {
+const Signup = () => {
     const [emailValue, setEmail] = useState("");
     const [senhaValue, setSenha] = useState("");
-    const [loginValue, setLoginValue] = useState("");
+    const [signupValue, setSignup] = useState(true);
 
     const onChangeEmail = event => {
         setEmail(event.target.value)
@@ -27,9 +27,9 @@ const Login = () => {
     const history = useHistory();
     const pageInicial = () => {
         history.push("/");
-      };
+    };
 
-    const criarLogin = (emailValue, senhaValue) => {
+    const criarLogin = () => {
         const body = {
             email: emailValue,
             password: senhaValue
@@ -39,18 +39,17 @@ const Login = () => {
             "https://us-central1-labenu-apis.cloudfunctions.net/labeX/nathalia-julian/signup",
             body,
             {
-                headers: {
-                    Authorization: "nathalia-julian"
-                }
+                headers: {'Content-Type': 'application/json'}
             })
             .then(resposta => {
-            setLoginValue(resposta.data)
-            history.push("/logado")
-            alert(`Bem vindo ${emailValue}, \nVocê será redirecionado para fazer o Login.`)
-            console.log("Deu certo!!", body);
+                setSignup(resposta.data);
+                history.push("/login")
+                alert(`Bem vindo ${emailValue}, \nVocê será redirecionado para fazer o Login.`)
+                
             })
             .catch(error => {
-            console.log("Deu erro");
+                console.log("Deu erro", error);
+                alert("Email já cadastrado")
             });
     }
     return (
@@ -68,4 +67,4 @@ const Login = () => {
     );
 };
 
-export default Login
+export default Signup
