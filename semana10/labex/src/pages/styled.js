@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import back from '../components/back.png';
+import back from '../components/back.jpg';
 
 
 export const AppContainer = styled.div`
@@ -30,9 +30,11 @@ export const NavHome = styled.div`
 export const ButtonLogin = styled.button`
     height: 50px;
     width: 120px;
-    border-radius: 20px;
-    background: transparent;
-    color: white;
+    margin-left: 10px;
+    border-radius: 10px;
+    background: white;
+    opacity: 0.8;
+    color: black;
     font-weight: bold;
 `;
 export const BodyHome = styled.div`
@@ -49,9 +51,11 @@ export const ImgLogo = styled.img`
 export const ButtonVerViagens = styled.button`
     width: 250px;
     height: 50px;
+    margin-top: 50px;
     border-color: #ff7800;
-    background: transparent;
-    color: white;
+    background: white;
+    opacity: 0.8;
+    color: black;
     font-weight: bold;
 `;
 
@@ -67,6 +71,7 @@ export const LoginContainer = styled.div`
 `;
 export const TextLogin = styled.h1`
     height: 50px;
+    color:black;
 `;
 export const ImgLogoLogin = styled.img`
     height: 100px;
@@ -74,15 +79,16 @@ export const ImgLogoLogin = styled.img`
     justify-self: flex-start;
 `;
 export const BoxLogin = styled.div`
-    height: 400px;
-    width: 450px;
+    height: 450px;
+    width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border: 1px solid white;
     border-radius: 10px;
-    background: transparent;
+    background: white;
+    opacity: 0.8;
 `;
 export const LinkRecuperarSenha = styled.a`
     color: #ff7800;
@@ -145,17 +151,14 @@ export const AdminContainer = styled.div`
     padding-left: 40px;
     display: flex;
     flex-direction: column;
-    background: transparent;
     color: white;
 `;
 export const TripsContainer = styled.div`
-    height: 85%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    color: white;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    opacity: 0.8;
 `;
 export const TripsCard = styled.div`
     height: 300px;
@@ -226,6 +229,21 @@ export const ListTripsContainer = styled.div`
     color: white;
     height: 100vh;
     padding: 40px;
+`;
+export const ListTripsCards = styled.div`
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    opacity: 0.8;
+`;
+export const TripCard = styled.div`
+    height: 200px;
+    width: 300px;    
+    background: white;
+    border-radius: 15px;
+    color: black;
+    padding: 5px;
 `;
 //Inscrição Page
 export const InscricaoContainer = styled.div`

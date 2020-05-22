@@ -9,13 +9,17 @@ const HomePage = () => {
     const goToLoginPage = () => {
         history.push("/login")
     }
+    const goToSignupPage = () => {
+        history.push("/signup")
+    }
     const goToListTripsPage = () => {
         history.push("/list-trips")
     }
     return (
         <HomeContainer>
             <NavHome>
-                <ButtonLogin onClick={goToLoginPage}>Login</ButtonLogin>
+                <ButtonLogin onClick={goToSignupPage}>Criar Login</ButtonLogin>
+                <ButtonLogin onClick={goToLoginPage}>Fazer Login</ButtonLogin>
             </NavHome>
             <BodyHome>
                 <ImgLogo src={Logo}/>

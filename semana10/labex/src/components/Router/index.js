@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 
 import ListTripsPage from "../../pages/ListTripsPage";
+import SignupPage from "../../pages/SignupPage";
 import LoginPage from "../../pages/LoginPage";
 import LogoutPage from "../../pages/LogoutPage";
 import HomePage from "../../pages/HomePage";
@@ -25,6 +26,9 @@ const RouterLogin = () => {
         </Route>
         <Route exact path="/login">
           <LoginPage />
+        </Route>
+        <Route exact path="/signup">
+          <SignupPage />
         </Route>
         <Route exact path="/logado">
           <AdminPage />

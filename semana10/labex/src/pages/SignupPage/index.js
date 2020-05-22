@@ -7,6 +7,7 @@ import LogoLogin from '../Logo2.png';
 const Login = () => {
     const [emailValue, setEmail] = useState("");
     const [senhaValue, setSenha] = useState("");
+    const [loginValue, setLoginValue] = useState("");
 
     const onChangeEmail = event => {
         setEmail(event.target.value)
@@ -14,40 +15,39 @@ const Login = () => {
     const onChangeSenha = event => {
         setSenha(event.target.value)
     };
-    // const onClickSingin = () => {
+    // const onClickSignup = () => {
     //     const login = {
     //         email: emailValue,
     //         password: senhaValue 
     //     };
     //     console.log(login)
     //     history.push("/logado")
-    //     alert(`Olá ${emailValue}, \nVocê será redirecionado para sua Page Administrativa!!`)
+    //     alert(`Bem vindo ${emailValue}, \nVocê será redirecionado para fazer o Login.`)
     // };
     const history = useHistory();
     const pageInicial = () => {
         history.push("/");
       };
 
-    const fazerLogin = (emailValue, senhaValue) => {
+    const criarLogin = (emailValue, senhaValue) => {
         const body = {
             email: emailValue,
             password: senhaValue
         };
-        
         axios
             .post(
-            "https://us-central1-labenu-apis.cloudfunctions.net/labeX/nathalia-julian/login",
+            "https://us-central1-labenu-apis.cloudfunctions.net/labeX/nathalia-julian/signup",
             body,
             {
                 headers: {
-                Authorization: "nathalia-julian"
+                    Authorization: "nathalia-julian"
                 }
-            }
-            )
+            })
             .then(resposta => {
-            console.log(body);
-            history.push("/logado");
-            alert(`Olá ${emailValue}, \nVocê será redirecionado para sua Page Administrativa!!`);
+            setLoginValue(resposta.data)
+            history.push("/logado")
+            alert(`Bem vindo ${emailValue}, \nVocê será redirecionado para fazer o Login.`)
+            console.log("Deu certo!!", body);
             })
             .catch(error => {
             console.log("Deu erro");
@@ -58,11 +58,10 @@ const Login = () => {
             <button onClick={pageInicial}>Voltar</button>
             <ImgLogoLogin src={LogoLogin}/>
             <BoxLogin>
-                <TextLogin>Login</TextLogin>
+                <TextLogin>Signup</TextLogin>
                 <InputLogin onChange={onChangeEmail} type={"email"} placeholder={"Email"}/>
                 <InputLogin onChange={onChangeSenha}type={"password"} placeholder={"Senha"}/>
-                <LinkRecuperarSenha href={'#'}>Esqueci a senha</LinkRecuperarSenha>
-                <ButtonSingIn onClick={fazerLogin}>Sign in</ButtonSingIn>
+                <ButtonSingIn onClick={criarLogin}>Criar</ButtonSingIn>
             </BoxLogin>
             
         </LoginContainer>
