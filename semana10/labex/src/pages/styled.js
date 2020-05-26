@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 import back from '../components/back.jpg';
+import Button from '@material-ui/core/Button';
+import { TextField, Fab } from '@material-ui/core';
 
 
 export const AppContainer = styled.div`
     margin: 0;
     @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
     font-family: 'Roboto', sans-serif;
-`;
-export const Container = styled.div`
-    background-image: url(${back});
 `;
 
 //Home Page
@@ -27,15 +26,8 @@ export const NavHome = styled.div`
     align-items: center;
     justify-content: flex-end;
 `;
-export const ButtonLogin = styled.button`
+export const ButtonLogin = styled(Button)`
     height: 50px;
-    width: 120px;
-    margin-left: 10px;
-    border-radius: 10px;
-    background: white;
-    opacity: 0.8;
-    color: black;
-    font-weight: bold;
 `;
 export const BodyHome = styled.div`
     height: 100%;
@@ -44,19 +36,15 @@ export const BodyHome = styled.div`
     align-items: center;
     justify-content: center;
 `;
-
 export const ImgLogo = styled.img`
     width: 40%;
 `;
-export const ButtonVerViagens = styled.button`
-    width: 250px;
+export const TextoHome = styled.h2`
+    color: white;
+    text-shadow: 0 0 0.2em black, 0 0 0.2em black;
+`;
+export const ButtonVerViagens = styled(Button)`
     height: 50px;
-    margin-top: 50px;
-    border-color: #ff7800;
-    background: white;
-    opacity: 0.8;
-    color: black;
-    font-weight: bold;
 `;
 
 // Login Page
@@ -69,42 +57,37 @@ export const LoginContainer = styled.div`
     background-image: url(${back});
     color: white;
 `;
-export const TextLogin = styled.h1`
-    height: 50px;
-    color:black;
+export const FabLogin = styled(Fab)`
+    align-self: flex-start;
 `;
 export const ImgLogoLogin = styled.img`
     height: 100px;
     display: flex;
     justify-self: flex-start;
 `;
+export const TextLogin = styled.h1`
+    color: black;
+`;
 export const BoxLogin = styled.div`
-    height: 450px;
+    height: 400px;
     width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    border: 1px solid white;
+    justify-content: space-evenly;
     border-radius: 10px;
     background: white;
-    opacity: 0.8;
+    opacity: 0.85;
 `;
 export const LinkRecuperarSenha = styled.a`
     color: #ff7800;
 `;
-export const InputLogin = styled.input`
+export const InputLogin = styled(TextField)`
     height: 35px;
-    width: 350px;
-    margin-bottom: 15px;
-    border-radius: 10px;
+    width: 250px;
 `;
-export const ButtonSingIn = styled.button`
-    height: 35px;
-    width: 100px;
-    margin-top: 15px;
-    border-radius: 10px;
-    font-weight: bold;
+export const ButtonSingIn = styled(Button)`
+    height: 40px;
 `;
 
 ///////////////////////
@@ -113,6 +96,7 @@ export const RotarContainer = styled.div`
     height: 99.6vh;
     width: 99.6vw;
 `;
+
 // NavAdmin
 export const NavContainer = styled.div`
     padding: 0 40px;
@@ -145,32 +129,15 @@ export const ButtonNav = styled.button`
         background: #ff7800;
     }
 `;
+
 // Admin Page
-export const AdminContainer = styled.div`
-    height: 90vh;
-    padding-left: 40px;
-    display: flex;
-    flex-direction: column;
-    color: white;
-`;
-export const TripsContainer = styled.div`
-    padding: 40px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 15px;
-    opacity: 0.8;
-`;
-export const TripsCard = styled.div`
-    height: 300px;
-    width: 400px;
-    background: transparent;
-    border: 1px solid white;
-    border-radius: 10px;
+export const Container = styled.div`
+    height: 100vh;
+    background-image: url(${back});
 `;
 
 // Request Page
 export const RequestContainer = styled.div`
-    height: 90vh;
     padding-left: 40px;
     background: transparent;
     color: white;
@@ -208,6 +175,7 @@ export const ButtonRequest = styled.button`
     font-weight: bold;
     margin: 10px;
 `;
+
 // Create Trips Page
 export const CreateTripsContainer = styled.div`
     height: 90vh;
@@ -223,28 +191,37 @@ export const CreateCard = styled.div`
     justify-content: center;
     color: white;
 `;
+
 // List Trips Page
 export const ListTripsContainer = styled.div`
     background-image: url(${back});
     color: white;
-    height: 100vh;
+    height: 100%;
     padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 `;
 export const ListTripsCards = styled.div`
     padding: 40px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
     opacity: 0.8;
 `;
 export const TripCard = styled.div`
     height: 200px;
     width: 300px;    
-    background: white;
-    border-radius: 15px;
+    background: #ff7800;
     color: black;
-    padding: 5px;
+    border-radius: 15px;
+    text-align: center;
 `;
+export const ButtonListTrips = styled(Button)`
+    height: 40px;
+`;
+
 //Inscrição Page
 export const InscricaoContainer = styled.div`
     background-image: url(${back});
@@ -265,5 +242,13 @@ export const CardInscricao = styled.div`
     justify-content: space-evenly;
     border: 1px solid white;
     border-radius: 10px;
-    background: transparent;
+    background: white;
+    color: black;
+`;
+export const ButtonInscricao = styled(Button)`
+    height: 40px;
+`;
+export const InputInscricao = styled(TextField)`
+    height: 35px;
+    width: 300px;
 `;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ListTripsContainer, ListTripsCards, TripCard } from "../styled";
+import { ListTripsContainer, ListTripsCards, ButtonListTrips, TripCard } from "../styled";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
@@ -29,8 +29,7 @@ const ListTrips = () => {
   }, [setTripList]);
   return (
     <ListTripsContainer >
-      <button onClick={pageInicial}>Pagina inicial</button>
-      <button onClick={pageInscricao}>Inscreva-se</button>
+      <ButtonListTrips variant="contained" color={'primary'} onClick={pageInicial}>Pagina inicial</ButtonListTrips>
       <h1>Viagens disponiveis</h1>
       <ListTripsCards>
         {tripList.map((trip) => {
@@ -39,6 +38,7 @@ const ListTrips = () => {
               <h3>{trip.name}</h3>
               <p>{trip.planet}</p>
               <p>{trip.date}</p>
+              <ButtonListTrips variant="contained" color={'secondary'} onClick={pageInscricao}>Reservar cadeira</ButtonListTrips>
             </TripCard>
           );
         })}

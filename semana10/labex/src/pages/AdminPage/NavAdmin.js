@@ -13,13 +13,13 @@ const NavAdmin = () => {
       history.push("/logado/create-trips-page");
     };
     const goToOut = () => {
+      localStorage.clear();
       history.push("/out");
     };
   return (
       <NavContainer>
         <ImgLogoNav src={LogoNav}/>
         <ButtonsNav>
-            <ButtonNav onClick={goToRequestPage}>Request</ButtonNav>
             <ButtonNav onClick={goToCreateTripsPage}>Criar Viagem</ButtonNav>
             <ButtonNav onClick={goToOut}>Sair</ButtonNav>
         </ButtonsNav>

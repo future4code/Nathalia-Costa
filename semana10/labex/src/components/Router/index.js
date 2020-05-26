@@ -42,6 +42,9 @@ const Router = () => {
         <Route exact path="/out">
           <LogoutPage />
         </Route>
+        <Route path="/">
+          Error 404!!
+        </Route>
       </Switch>
     </BrowserRouter>
   );

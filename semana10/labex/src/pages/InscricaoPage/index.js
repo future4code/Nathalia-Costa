@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { InscricaoContainer, CardInscricao, ImgLogoLogin } from "../styled";
+import { InscricaoContainer, CardInscricao, ImgLogoLogin, InputInscricao, ButtonInscricao } from "../styled";
 import LogoLogin from '../Logo2.png';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
@@ -66,13 +66,13 @@ const IncricaoPage = () => {
     
     return (
         <InscricaoContainer>
-            <button onClick={pageInicial}>Pagina inicial</button>
-            <button onClick={voltarListTrips}>Voltar</button>
+            <ButtonInscricao color={"primary"} variant="contained" onClick={pageInicial}>Pagina inicial</ButtonInscricao>
+            <ButtonInscricao color={"primary"} variant="contained" onClick={voltarListTrips}>Voltar</ButtonInscricao>
             <ImgLogoLogin src={LogoLogin}/>
             <CardInscricao>
                 <h1>Inscrição</h1>
-                <input type={"text"} placeholder={"Nome"} onChange={onChangeName}/>
-                <select onChange={onChangeAge}>
+                <InputInscricao color={"primary"} type={"text"} label={"Nome"} onChange={onChangeName}/>
+                <InputInscricao select label="Idade" onChange={onChangeAge}>
                     <option>18</option>
                     <option>19</option>
                     <option>20</option>
@@ -82,17 +82,18 @@ const IncricaoPage = () => {
                     <option>24</option>
                     <option>25</option>
                     <option>26</option>
-                </select>
-                <input type={"text"} placeholder={"Profissão"} onChange={onChangeProfession}/>
-                <select onChange={onChangeCountry}>
+                </InputInscricao>
+                <InputInscricao type={"text"} label={"Profissão"} onChange={onChangeProfession}/>
+                <InputInscricao select label="Pais" onChange={onChangeCountry}>
+                    <option value={''}></option>
                     <option value={'Brasil'}>Brasil</option>
                     <option value={'Argentina'}>Argentina</option>
                     <option value={"Estados Unidos"}>Estados Unidos</option>
                     <option value={'Canadá'}>Canadá</option>
                     <option value={'China'}>China</option>
-                </select>
-                <textarea placeholder={"Porque você é um bom candidato(a)?"} onChange={onChangeApplicationText}/>
-                <button onClick={fazerInscricao}>Enviar</button>
+                </InputInscricao>
+                <InputInscricao placeholder={"Porque você é um bom candidato(a)?"} onChange={onChangeApplicationText}/>
+                <ButtonInscricao variant="contained" color={'primary'} onClick={fazerInscricao}>Enviar</ButtonInscricao>
             </CardInscricao>
         </InscricaoContainer>
     );

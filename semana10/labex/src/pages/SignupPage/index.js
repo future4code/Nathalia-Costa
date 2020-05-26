@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from "axios";
-import { LoginContainer, TextLogin, BoxLogin, ImgLogoLogin, InputLogin, ButtonSingIn } from '../styled';
+import { LoginContainer, TextLogin, FabLogin, BoxLogin, ImgLogoLogin, InputLogin, ButtonSingIn } from '../styled';
+
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import LogoLogin from '../Logo2.png';
 
 const Signup = () => {
@@ -15,15 +17,7 @@ const Signup = () => {
     const onChangeSenha = event => {
         setSenha(event.target.value)
     };
-    // const onClickSignup = () => {
-    //     const login = {
-    //         email: emailValue,
-    //         password: senhaValue 
-    //     };
-    //     console.log(login)
-    //     history.push("/logado")
-    //     alert(`Bem vindo ${emailValue}, \nVocê será redirecionado para fazer o Login.`)
-    // };
+
     const history = useHistory();
     const pageInicial = () => {
         history.push("/");
@@ -54,14 +48,19 @@ const Signup = () => {
     }
     return (
         <LoginContainer>
-            <button onClick={pageInicial}>Voltar</button>
+            <FabLogin variant="extended"  onClick={pageInicial}>
+                <ArrowBackIcon /> VOLTAR
+            </FabLogin>
             <ImgLogoLogin src={LogoLogin}/>
             <BoxLogin>
                 <TextLogin>Signup</TextLogin>
-                <InputLogin onChange={onChangeEmail} type={"email"} placeholder={"Email"}/>
-                <InputLogin onChange={onChangeSenha}type={"password"} placeholder={"Senha"}/>
-                <ButtonSingIn onClick={criarLogin}>Criar</ButtonSingIn>
+                <InputLogin onChange={onChangeEmail} type={"email"} label={"Email"}/>
+                <InputLogin onChange={onChangeSenha}type={"password"} label={"Senha"}/>
+                <ButtonSingIn variant="contained" color={'primary'} onClick={criarLogin}>Criar</ButtonSingIn>
             </BoxLogin>
+            <div>
+                
+            </div>
             
         </LoginContainer>
     );

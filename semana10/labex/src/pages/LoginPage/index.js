@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from "axios";
-import { LoginContainer, TextLogin, BoxLogin, ImgLogoLogin, InputLogin, LinkRecuperarSenha, ButtonSingIn } from '../styled';
+import { LoginContainer, FabLogin, TextLogin, BoxLogin, ImgLogoLogin, InputLogin, LinkRecuperarSenha, ButtonSingIn } from '../styled';
+import Fab from '@material-ui/core/Fab';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import LogoLogin from '../Logo2.png';
 
+const baseUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/nathalia-julian"
 const Login = () => {
     const [emailValue, setEmail] = useState("");
     const [senhaValue, setSenha] = useState("");
     const [LoginValue, setLogin] = useState("")
+    const [token, setToken] = useState("")
 
     const onChangeEmail = event => {
         setEmail(event.target.value)
@@ -28,15 +32,13 @@ const Login = () => {
         };
         
         axios
-            .post(
-            "https://us-central1-labenu-apis.cloudfunctions.net/labeX/nathalia-julian/login",
-            body,
+            .post(`${baseUrl}/login`, body,
             {
                 headers: {'Content-Type': 'application/json'}
             })
             .then(resposta => {
-                setLogin(resposta.data);
-                console.log(resposta.data);
+                localStorage.setItem("token", resposta.data.token);
+                console.log(resposta.data.token);
                 history.push("/logado");
                 alert(`Olá ${emailValue}, \nVocê será redirecionado para sua Page Administrativa!!`);
             })
@@ -47,14 +49,18 @@ const Login = () => {
     }
     return (
         <LoginContainer>
-            <button onClick={pageInicial}>Voltar</button>
+            <FabLogin variant="extended" onClick={pageInicial}>
+                <ArrowBackIcon />
+                Voltar
+            </FabLogin>
             <ImgLogoLogin src={LogoLogin}/>
             <BoxLogin>
                 <TextLogin>Login</TextLogin>
                 <InputLogin onChange={onChangeEmail} type={"email"} placeholder={"Email"}/>
                 <InputLogin onChange={onChangeSenha}type={"password"} placeholder={"Senha"}/>
+                <LinkRecuperarSenha href={'#'}>[]Lembre de mim</LinkRecuperarSenha>
                 <LinkRecuperarSenha href={'#'}>Esqueci a senha</LinkRecuperarSenha>
-                <ButtonSingIn onClick={fazerLogin}>Sign in</ButtonSingIn>
+                <ButtonSingIn variant="contained" color={'primary'} onClick={fazerLogin}>Sign in</ButtonSingIn>
             </BoxLogin>
             
         </LoginContainer>
