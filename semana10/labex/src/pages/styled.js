@@ -182,7 +182,7 @@ export const CreateTripsContainer = styled.div`
     background: transparent;
     color: white;
 `;
-export const CreateCard = styled.div`
+export const FormCriarViagem = styled.form`
     height: 300px;
     width: 250px;
     padding: 15px;
