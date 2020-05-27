@@ -3,16 +3,18 @@ import { ListTripsContainer, ListTripsCards, ButtonListTrips, TripCard } from ".
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
-const ListTrips = () => {
+const ListTrips = (props) => {
   const history = useHistory();
 
   const pageInicial = () => {
     history.push("/");
   };
-  const pageInscricao = () => {
-    history.push("/list-trips/inscricao");
+  const onClickReservar = () => {
+    history.push(`/list-trips/inscricao${viagemSelecionada}`);
   };
+  
   const [tripList, setTripList] = useState([]);
+  const [viagemSelecionada, setViagemSelecionada] = useState("");
 
   useEffect(() => {
     axios
@@ -26,19 +28,25 @@ const ListTrips = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, [setTripList]);
+  }, [setTripList]);    
+  
+    
   return (
+
     <ListTripsContainer >
       <ButtonListTrips variant="contained" color={'primary'} onClick={pageInicial}>Pagina inicial</ButtonListTrips>
       <h1>Viagens disponiveis</h1>
       <ListTripsCards>
         {tripList.map((trip) => {
           return (
-            <TripCard>
+            <TripCard 
+            value={viagemSelecionada}
+            onChange={e => setViagemSelecionada(e.target.value)}
+            >
               <h3>{trip.name}</h3>
               <p>{trip.planet}</p>
               <p>{trip.date}</p>
-              <ButtonListTrips variant="contained" color={'secondary'} onClick={pageInscricao}>Reservar cadeira</ButtonListTrips>
+              <ButtonListTrips value={trip.id} variant="contained" color={'secondary'} onClick={onClickReservar}>Reservar</ButtonListTrips>
             </TripCard>
           );
         })}

@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { InscricaoContainer, CardInscricao, ImgLogoLogin, InputInscricao, ButtonInscricao } from "../styled";
 import LogoLogin from '../Logo2.png';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-const IncricaoPage = () => {
-    const history = useHistory();
 
+
+const IncricaoPage = (props) => {
+    const history = useHistory();
+    const pathParams = useParams();
+    
     const pageInicial = () => {
       history.push("/");
     };
@@ -45,9 +48,10 @@ const IncricaoPage = () => {
             country: countryValue
         };
         
+
         axios
             .post(
-            "https://us-central1-labenu-apis.cloudfunctions.net/labeX/nathalia-julian/trips/NoIFVcOiSgTKTIPVZwXS/apply",
+            `https://us-central1-labenu-apis.cloudfunctions.net/labeX/nathalia-julian/trips/${pathParams.id}/apply`,
             body,
             {
                 headers: {'Content-Type': 'application/json'}
@@ -55,7 +59,7 @@ const IncricaoPage = () => {
             .then(resposta => {
                 setInscricao(resposta.data);
                 console.log(resposta.data);
-                history.push("/list-trips");
+                history.push("/list-trips/");
                 alert(`Olá ${nameValue}, \nSua incrição foi enviada para analise. \nObrigada pelo interesse.`);
             })
             .catch(error => {
@@ -72,23 +76,24 @@ const IncricaoPage = () => {
             <CardInscricao>
                 <h1>Inscrição</h1>
                 <InputInscricao color={"primary"} type={"text"} label={"Nome"} onChange={onChangeName}/>
-                <InputInscricao select label="Idade" onChange={onChangeAge}>
-                    <option>18</option>
-                    <option>19</option>
-                    <option>20</option>
-                    <option>21</option>
-                    <option>22</option>
-                    <option>23</option>
-                    <option>24</option>
-                    <option>25</option>
-                    <option>26</option>
+                <InputInscricao select label="Idade" value={ageValue} onChange={onChangeAge}>
+                    <option value={""}></option>
+                    <option value={"18"}>18</option>
+                    <option value={"19"}>19</option>
+                    <option value={"20"}>20</option>
+                    <option value={"21"}>21</option>
+                    <option value={"22"}>22</option>
+                    <option value={"23"}>23</option>
+                    <option value={"24"}>24</option>
+                    <option value={"25"}>25</option>
+                    <option value={"26"}>26</option>
                 </InputInscricao>
                 <InputInscricao type={"text"} label={"Profissão"} onChange={onChangeProfession}/>
-                <InputInscricao select label="Pais" onChange={onChangeCountry}>
+                <InputInscricao select label="Pais" value={countryValue} onChange={onChangeCountry}>
                     <option value={''}></option>
                     <option value={'Brasil'}>Brasil</option>
                     <option value={'Argentina'}>Argentina</option>
-                    <option value={"Estados Unidos"}>Estados Unidos</option>
+                    <option value={'Estados Unidos'}>Estados Unidos</option>
                     <option value={'Canadá'}>Canadá</option>
                     <option value={'China'}>China</option>
                 </InputInscricao>

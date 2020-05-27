@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CreateTripsContainer, CreateCard, Container } from "../styled";
+import { CreateTripsContainer, CreateCard, ButtonCriarViagem, InputCriarViagem } from "../styled";
 import { useHistory } from "react-router-dom";
 import NavAdmin from "../AdminPage/NavAdmin";
 import axios from "axios";
@@ -60,13 +60,11 @@ const CreateTripsPage = () => {
   };
 
   return (
-    <Container>
-      <NavAdmin />
       <CreateTripsContainer>
         <h1>Create Trips Page</h1>
         <CreateCard>
-          <input type={"text"} placeholder={"Nome"} onChange={onChangeName}/>
-          <select onChange={onChangePlanet} >
+          <InputCriarViagem type={"text"} label={"Nome"} onChange={onChangeName}/>
+          <InputCriarViagem select label={"Planeta"} onChange={onChangePlanet} >
               <option value={''}></option>
               <option value={'Mercúrio'}>Mercúrio</option>
               <option value={'Vênus'}>Vênus</option>
@@ -75,15 +73,13 @@ const CreateTripsPage = () => {
               <option value={'Saturno'}>Saturno</option>
               <option value={'Urano'}>Urano</option>
               <option value={'Neturno'}>Neturno</option>
-          </select>
-          <input type={"date"} placeholder={"Data"} onChange={onChangeDate}/>
-          <input type={"number"} placeholder={"Duração em dias"} onChange={onChangeDurationInDays}/>
-          <textarea placeholder={"Descrição"} onChange={onChangeDescription}/>
-          <button onClick={onClickCriarViagem}>Criar Viagem</button>
+          </InputCriarViagem>
+          <InputCriarViagem label={"Data"} onChange={onChangeDate}/>
+          <InputCriarViagem type={"number"} label={"Duração em dias"} onChange={onChangeDurationInDays}/>
+          <InputCriarViagem label={"Descrição"} onChange={onChangeDescription}/>
+          <ButtonCriarViagem variant="contained" color={'primary'} onClick={onClickCriarViagem}>Criar Viagem</ButtonCriarViagem>
         </CreateCard>
-        <button onClick={goToBack}>Voltar</button>
       </CreateTripsContainer>
-    </Container>
   );
 };
 

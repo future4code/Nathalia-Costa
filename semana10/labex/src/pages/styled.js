@@ -108,7 +108,7 @@ export const NavContainer = styled.div`
     align-items: center;
 `;
 export const ImgLogoNav = styled.img`
-    height: 50px;
+    height: 70px;
 `;
 export const ButtonsNav = styled.div`
     height: 100%;
@@ -117,23 +117,22 @@ export const ButtonsNav = styled.div`
     align-items: flex-end;
     justify-content: flex-end;
 `;
-export const ButtonNav = styled.button`
-    height: 45px;
-    width: 140px;
-    font-weight: bold;
-    background: transparent;
-    color: white;
-    font-size: 1.2rem;
-    border: none;
-    :hover{
-        background: #ff7800;
-    }
+export const ButtonNav = styled(Button)`
+    height: 50px;
+    width: 100px;
 `;
 
 // Admin Page
 export const Container = styled.div`
     height: 100vh;
     background-image: url(${back});
+`;
+export const BodyAdm = styled.div`
+    height: 100vh;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 `;
 
 // Request Page
@@ -147,11 +146,11 @@ export const RequestCard = styled.div`
     width: 400px;
     display: flex;
     flex-direction: column;
-    background: transparent;
-    border: 1px solid white;
-    border-radius: 10px;
     align-items: center;
     justify-content: center;
+    background: white;
+    border-radius: 10px;
+    color: black;
 `;
 export const InformacoesCard = styled.div`
     height: 70%;
@@ -184,12 +183,21 @@ export const CreateTripsContainer = styled.div`
     color: white;
 `;
 export const CreateCard = styled.div`
-    margin-top: 15px;
+    height: 300px;
+    width: 250px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     color: white;
+    background: white;
+    border-radius:15px;
+`;
+export const ButtonCriarViagem = styled(Button)`
+`;
+export const InputCriarViagem = styled(TextField)`
+width: 200px;
 `;
 
 // List Trips Page
@@ -211,8 +219,8 @@ export const ListTripsCards = styled.div`
     opacity: 0.8;
 `;
 export const TripCard = styled.div`
-    height: 200px;
-    width: 300px;    
+    height: 35vh;
+    width: 20vw;    
     background: #ff7800;
     color: black;
     border-radius: 15px;

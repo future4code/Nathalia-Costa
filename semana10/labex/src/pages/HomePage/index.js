@@ -32,7 +32,7 @@ const HomePage = () => {
             <BodyHome>
                 <ImgLogo src={Logo}/>
                 <TextoHome>"Encontre as melhores viagens espaciais!"</TextoHome>
-                <ButtonVerViagens variant="contained" color={'primary'} onClick={goToListTripsPage}>VER VIAGENS DISPONIVEIS</ButtonVerViagens>
+                <ButtonVerViagens variant="contained" color={'primary'} onClick={goToListTripsPage}>RESERVE SEU LUGAR AQUI</ButtonVerViagens>
             </BodyHome>
         </HomeContainer>
     );
