@@ -10,6 +10,9 @@ const meuTema = createMuiTheme({
     },
     secondary: {
       main: "#ffffff"
+    },
+    error: {
+      main: "#ff0000"
     }
   }
 })

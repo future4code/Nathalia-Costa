@@ -7,7 +7,6 @@ import {
     ButtonRequest
   } from "../styled";
 import { useHistory } from "react-router-dom";
-import NavAdmin from "../AdminPage/NavAdmin";
 import axios from "axios";
 
 const RequestsPage = () => {
@@ -19,26 +18,30 @@ const RequestsPage = () => {
   const history = useHistory();
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token === null) {
+      history.push("/");
+    };
+
     const body = {
       approve: resquestValue
     };
 
     // axios
     //     .put(
-    //     `https://us-central1-labenu-apis.cloudfunctions.net/labeX/nathalia-julian/trips/NoIFVcOiSgTKTIPVZwXS/candidates/DYmdG4XpVVjKY1SEfVH2/decide`,
+    //     `https://us-central1-labenu-apis.cloudfunctions.net/labeX/nathalia-julian/trips/${idViagem}/candidates/${id}/decide`,
     //     body,
     //     {
     //         headers: {'Content-Type': 'application/json', 'auth': `${token}`}
     //     })
     //     .then(resposta => {
-            
     //         console.log(resposta.data);
     //     })
     //     .catch(error => {
     //         alert("Erro");
     //         console.log("Deu erro", error);
     //     });
-  }, [history]);
+  }, [history, resquestValue]);
 
 
   return (
@@ -53,7 +56,7 @@ const RequestsPage = () => {
       </InformacoesCard>
       <ButtonsCard>
         <ButtonRequest onClick={onClickRequest} value={true}>ACEITAR</ButtonRequest>
-        <ButtonRequest onClickRequest={onClickRequest} value={false}>RECUSAR</ButtonRequest>
+        <ButtonRequest value={false}>RECUSAR</ButtonRequest>
       </ButtonsCard>
     </RequestCard>
   </RequestContainer>

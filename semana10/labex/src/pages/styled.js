@@ -197,7 +197,14 @@ export const FormCriarViagem = styled.form`
 export const ButtonCriarViagem = styled(Button)`
 `;
 export const InputCriarViagem = styled(TextField)`
-width: 200px;
+    width: 200px;
+    :valid {
+        color: green;
+    }
+
+    :invalid {
+        color: red;
+    }
 `;
 
 // List Trips Page

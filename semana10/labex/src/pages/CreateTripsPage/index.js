@@ -5,10 +5,18 @@ import {
   ButtonCriarViagem,
   InputCriarViagem,
 } from "../styled";
+import {KeyboardDatePicker} from "@material-ui/pickers";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 import { useForm } from "../../components/Hooks";
 
 const CreateTripsPage = () => {
+
+  const [selectedDate, setSelectedDate] = React.useState(new Date(''));
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  };
+  
   const { form, onChange } = useForm({
     nome: "",
     planeta: "",
@@ -30,8 +38,14 @@ const CreateTripsPage = () => {
   };
 
   const [viagemCriada, setViagemCriada] = useState("");
+  const history = useHistory()
 
   const onClickCriarViagem = () => {
+    const token = localStorage.getItem("token");
+    if (token === null) {
+      history.push("/");
+    }
+    
     const body = {
       name: form.nome,
       planet: form.planeta,
@@ -48,12 +62,11 @@ const CreateTripsPage = () => {
           headers: {
             "Content-Type": "application/json",
             auth:
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Im93T2g5ZWo2bW50akZqNUNRMVB4IiwiZW1haWwiOiJhc3Ryb2RldkBnbWFpbC5jb20uYnIiLCJpYXQiOjE1ODk1NjI5MDh9.aB4dNbTCkToXB7pdzEa-tuMa-QbRQDUd93eva4-cec0",
+              `${token}`,
           },
         }
       )
       .then((resposta) => {
-        setViagemCriada(resposta.data.trip);
         console.log(resposta.data.trip);
         alert(`Sua Viagem ${form.nome}, foi criada com sucesso!`);
       })
@@ -84,7 +97,6 @@ const CreateTripsPage = () => {
           label={"Planeta"} 
           onChange={onChangeValor}
           required>
-          <option value={""}></option>
           <option value={"Mercúrio"}>Mercúrio</option>
           <option value={"Vênus"}>Vênus</option>
           <option value={"Marte"}>Marte</option>
@@ -93,14 +105,10 @@ const CreateTripsPage = () => {
           <option value={"Urano"}>Urano</option>
           <option value={"Neturno"}>Neturno</option>
         </InputCriarViagem>
-        <InputCriarViagem 
+        <KeyboardDatePicker 
         value={form.data}
         name="data"
-        label={"Data"}
-        type="text"
-        inputProps={{ 
-          pattern: "[1-31]{1,2}/[1-12]{1,2}/[20-∞]{2,}", 
-          title: "DD/MM/AA" }}
+        format="MM/dd/yyyy"
         onChange={onChangeValor} 
         required/>
         <InputCriarViagem
