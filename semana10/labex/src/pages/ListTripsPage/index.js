@@ -1,20 +1,28 @@
 import React, { useState, useEffect } from "react";
-import { ListTripsContainer, ListTripsCards, ButtonListTrips, TripCard } from "../styled";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import {
+  ListTripsContainer,
+  ListTripsCards,
+  ButtonListTrips,
+  TripCard,
+  FabList
+} from "../styled";
+import NavigationIcon from '@material-ui/icons/Navigation';
 
 const ListTrips = (props) => {
-  const history = useHistory();
+  const [tripList, setTripList] = useState([]);
+  const [viagemSelecionada, setViagemSelecionada] = useState("2");
 
+  //Direcionar páginas
+  const history = useHistory();
   const pageInicial = () => {
     history.push("/");
   };
   const onClickReservar = () => {
-    history.push(`/list-trips/inscricao${viagemSelecionada}`);
+    history.push(`/list-trips/inscricao/${viagemSelecionada}`);
   };
-  
-  const [tripList, setTripList] = useState([]);
-  const [viagemSelecionada, setViagemSelecionada] = useState("");
+  console.log("viagem selecionada", viagemSelecionada);
 
   useEffect(() => {
     axios
@@ -28,29 +36,39 @@ const ListTrips = (props) => {
       .catch((err) => {
         console.log(err);
       });
-  }, [setTripList]);    
-  
-    
-  return (
+  }, [setTripList, viagemSelecionada, setViagemSelecionada]);
 
-    <ListTripsContainer >
-      <ButtonListTrips variant="contained" color={'primary'} onClick={pageInicial}>Pagina inicial</ButtonListTrips>
+  return (
+    <ListTripsContainer>
+      <ButtonListTrips
+        variant="contained"
+        color={"primary"}
+        onClick={pageInicial}
+      >
+        Pagina inicial
+      </ButtonListTrips>
       <h1>Viagens disponiveis</h1>
       <ListTripsCards>
         {tripList.map((trip) => {
           return (
-            <TripCard 
-            value={viagemSelecionada}
-            onChange={e => setViagemSelecionada(e.target.value)}
+            <TripCard
+              value={trip.id}
+              onChange={(e) => setViagemSelecionada(e.target.value)}
             >
               <h3>{trip.name}</h3>
               <p>{trip.planet}</p>
               <p>{trip.date}</p>
-              <ButtonListTrips value={trip.id} variant="contained" color={'secondary'} onClick={onClickReservar}>Reservar</ButtonListTrips>
             </TripCard>
           );
         })}
       </ListTripsCards>
+      <FabList
+        variant="extended"         
+        color={"secondary"}
+        onClick={onClickReservar}>
+        <NavigationIcon />
+        Reservar Lugar
+      </FabList>
     </ListTripsContainer>
   );
 };

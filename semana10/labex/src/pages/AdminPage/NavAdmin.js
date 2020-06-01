@@ -8,7 +8,7 @@ const NavAdmin = () => {
 
     const onClickSair = () => {
       localStorage.clear();
-      history.push("/");
+      history.push("/out");
     };
   return (
       <NavContainer>

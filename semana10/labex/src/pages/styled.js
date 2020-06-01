@@ -124,7 +124,7 @@ export const ButtonNav = styled(Button)`
 
 // Admin Page
 export const Container = styled.div`
-    height: 100vh;
+    height: 200vh;
     background-image: url(${back});
 `;
 export const BodyAdm = styled.div`
@@ -132,47 +132,60 @@ export const BodyAdm = styled.div`
     padding-top: 50px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
 `;
 
 // Request Page
 export const RequestContainer = styled.div`
-    padding-left: 40px;
-    background: transparent;
-    color: white;
+    margin-right: 5%;
+    margin-left: 2%;
+    padding: 15px;
+    width: 55%;
+    color: black;
+    background: #ff6000;
+    border-radius: 10px;
+    text-align: center;
 `;
-export const RequestCard = styled.div`
-    height: 300px;
-    width: 400px;
+export const GridCards = styled.div`
+    width: 95%;
+    margin: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: white;
-    border-radius: 10px;
-    color: black;
 `;
-export const InformacoesCard = styled.div`
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-`;
-export const ButtonsCard = styled.div`
-    height: 20%;
+
+export const RequestCard = styled.div`
+    width: 90%;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: black;
     margin: 10px;
 `;
-export const ButtonRequest = styled.button`
-    justify-self: flex-end;
-    height: 35px;
-    width: 100px;
-    background: grey;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    margin: 10px;
+export const InputRequest = styled(TextField)`
+    width: 90%;
+`;
+export const InformacoesCard = styled.div`
+    height: 50%;
+    width: 90%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    font-size: 14px;
+`;
+export const PCard = styled.p`
+    margin: 5px;
+    text-align: start;
+`;
+export const ButtonsCard = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+`;
+export const ButtonRequest = styled(Button)`
 `;
 
 // Create Trips Page
@@ -180,24 +193,23 @@ export const CreateTripsContainer = styled.div`
     height: 90vh;
     padding-left: 40px;
     background: transparent;
-    color: white;
 `;
 export const FormCriarViagem = styled.form`
-    height: 300px;
-    width: 250px;
+    height: 400px;
+    width: 350px;
     padding: 15px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    color: white;
+    align-items: center;
+    justify-content: space-evenly;
+    color: black;
     background: white;
     border-radius:15px;
 `;
 export const ButtonCriarViagem = styled(Button)`
 `;
 export const InputCriarViagem = styled(TextField)`
-    width: 200px;
+    width: 250px;
     :valid {
         color: green;
     }
@@ -221,20 +233,26 @@ export const ListTripsContainer = styled.div`
 export const ListTripsCards = styled.div`
     padding: 40px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-gap: 10px;
     opacity: 0.8;
 `;
 export const TripCard = styled.div`
-    height: 35vh;
-    width: 20vw;    
+    height: 100%;
+    width: 100%;    
     background: #ff7800;
     color: black;
     border-radius: 15px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 `;
 export const ButtonListTrips = styled(Button)`
     height: 40px;
+`;
+export const FabList = styled(Fab)`
 `;
 
 //Inscrição Page
@@ -242,20 +260,24 @@ export const InscricaoContainer = styled.div`
     background-image: url(${back});
     color: white;
     height: 100vh;
-    padding: 0px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 `;
-export const CardInscricao = styled.div`
-    height: 400px;
+export const ButtonsInscricao = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+`;
+export const CardInscricao = styled.form`
+    height: 550px;
     width: 450px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    border: 1px solid white;
     border-radius: 10px;
     background: white;
     color: black;
@@ -264,6 +286,5 @@ export const ButtonInscricao = styled(Button)`
     height: 40px;
 `;
 export const InputInscricao = styled(TextField)`
-    height: 35px;
-    width: 300px;
+    width: 350px;
 `;

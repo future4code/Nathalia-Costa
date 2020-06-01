@@ -7,8 +7,6 @@ import LoginPage from "../../pages/LoginPage";
 import LogoutPage from "../../pages/LogoutPage";
 import HomePage from "../../pages/HomePage";
 import AdminPage from "../../pages/AdminPage/AdminPage";
-import RequestsPage from "../../pages/RequestsPage";
-import CreateTripsPage from "../../pages/CreateTripsPage";
 import InscricaoPage from "../../pages/InscricaoPage";
 
 const Router = () => {
@@ -21,23 +19,17 @@ const Router = () => {
         <Route exact path="/list-trips" >
           <ListTripsPage />
         </Route>
-        <Route exact path="/list-trips/inscricao">
+        <Route exact path="/list-trips/inscricao/:id" >
           <InscricaoPage />
-        </Route>
-        <Route exact path="/login">
-          <LoginPage />
         </Route>
         <Route exact path="/signup">
           <SignupPage />
         </Route>
+        <Route exact path="/login">
+          <LoginPage />
+        </Route>
         <Route exact path="/logado">
-          <AdminPage />
-        </Route>
-        <Route exact path="/logado/request">
-          <RequestsPage />
-        </Route>
-        <Route exact path="/logado/create-trips-page">
-          <CreateTripsPage />
+          <AdminPage key={AdminPage}/>
         </Route>
         <Route exact path="/out">
           <LogoutPage />

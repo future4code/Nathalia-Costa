@@ -1,5 +1,5 @@
 import React from 'react';
-import { LoginContainer, ImgLogoLogin } from '../styled';
+import { LoginContainer, ImgLogoLogin, ButtonSingIn } from '../styled';
 import LogoLogin from '../Logo2.png';
 import { useHistory } from 'react-router-dom';
 
@@ -12,8 +12,13 @@ const Logout = () => {
     return (
         <LoginContainer>
             <ImgLogoLogin src={LogoLogin}/>
-            LOGOUT!!!!
-            <button onClick={pageInicial}>Pagina inicial</button>
+            <h1>LOGOUT!!!!</h1>
+            <ButtonSingIn
+                variant="contained"
+                color={"primary"}
+                onClick={pageInicial}>
+            Pagina inicial
+            </ButtonSingIn>
         </LoginContainer>
     );
 };

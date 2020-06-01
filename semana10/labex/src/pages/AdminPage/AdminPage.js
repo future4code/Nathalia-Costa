@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import {Container, BodyAdm} from "../styled";
 import NavAdmin from "./NavAdmin";
-import RequestsPage from "../RequestsPage";
-import CreateTripsPage from "../CreateTripsPage";
+import CreateTripsPage from "../AdminPage/PagesPrivadas/CreateTripsPage";
+import TripDetailsPage from "../AdminPage/PagesPrivadas/TripDetailsPage";
 import { useHistory } from "react-router-dom";
 
-const AdminPage = () => {
+const AdminPage = (props) => {
   const history = useHistory();
   
   useEffect(() => {
@@ -15,11 +15,11 @@ const AdminPage = () => {
       }
   }, [history]);
   return (
-    <Container>
-      <NavAdmin />
-      <BodyAdm>
-        <CreateTripsPage/>
-        <RequestsPage/>
+    <Container key={AdminPage}>
+      <NavAdmin key={NavAdmin}/>
+      <BodyAdm key={BodyAdm}>
+        <CreateTripsPage key={CreateTripsPage}/>
+        <TripDetailsPage key={TripDetailsPage}/>
       </BodyAdm>
 
     </Container>
