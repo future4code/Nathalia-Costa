@@ -21,6 +21,7 @@ const App = () => {
     const newPostsList = [newPost, ...postsList];
 
     setPostsList(newPostsList);
+    setInputValue('')
   };
 
   const deletePost = postId => {
@@ -49,6 +50,18 @@ const App = () => {
     setPostsList(newPostsList);
   };
 
+  const mapPostList = () => postsList.map(post => {
+    //Retorna o array de post
+      return (
+        <Post
+          key={post.id}
+          post={post}
+          toggleLike={toggleLike}
+          deletePost={deletePost}
+        />
+      );
+  })
+
   return (
     <div className="App">
       <div>
@@ -61,16 +74,8 @@ const App = () => {
         <button onClick={addPost}>Adicionar</button>
       </div>
       <br />
-      {postsList.map(post => {
-        return (
-          <Post
-            key={post.id}
-            post={post}
-            toggleLike={toggleLike}
-            deletePost={deletePost}
-          />
-        );
-      })}
+      {postsList.length === 0 ? '' : <p>Quantidade de post: {postsList.length}</p>}
+      {postsList.length === 0 ? <p>Nenhum post</p> : mapPostList()}
     </div>
   );
 };
