@@ -3,7 +3,7 @@ import ceu from './ceu.jpg';
 
 export const BodyContainer = styled.div`
     width: 100vw;
-    height: 120vh;
+    height: 100vh;
     background-image: url(${ceu});
     color: rgb(35, 159, 216);
     font-family:'Patrick Hand', cursive;
@@ -12,7 +12,7 @@ export const BodyContainer = styled.div`
     justify-content: center;
     align-items: center;
 `;
-export const SectionAdicionarTarefa = styled.section`
+export const FormAdicionarTarefa = styled.form`
     background-color: rgb(0, 93, 136);
     border-radius: 10px;
     height: 10%;
@@ -41,14 +41,10 @@ export const ArticleDia = styled.article`
     border-radius: 10px;
     height: 100%;
     background-color: rgb(35, 159, 216);
+    opacity: 0.9;
     color: black;
+    ul{
+        color: white;
+        padding-left: 20px;
+    }
 `;
-
-// .tamanhoAba{  tags dentro do section
-//     height: 30px;
-// }
-
-
-// ul{
-//     padding-left: 25px;
-// }
