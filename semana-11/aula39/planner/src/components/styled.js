@@ -23,6 +23,12 @@ export const FormAdicionarTarefa = styled.form`
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+    font-size: 0.8rem;
+    color: white; 
+`;
+export const Button = styled.button`
+    margin-top: 5px;
+    border-radius: 5px;
 `;
 export const SectionDiasDaSemana = styled.section`
     height: 60%;

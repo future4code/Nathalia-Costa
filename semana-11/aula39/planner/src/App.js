@@ -1,38 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { BodyContainer, FormAdicionarTarefa, TitleDia, SectionDiasDaSemana, ArticleDia } from './components/styled'
+import { BodyContainer, FormAdicionarTarefa, TitleDia, SectionDiasDaSemana, ArticleDia, Button } from './components/styled'
 import axios from 'axios';
-
-// adicionarTarefa(){
-//   const nomeDaTarefa = document.getElementById("novaTarefa").value;
-//   const diasDaSemana = document.getElementById("diasDaSemana").value;
-
-//   switch(diasDaSemana){
-//       case 'SEG' :
-//           document.getElementById("tarefaSegunda").innerHTML += "<li>"+nomeDaTarefa+"</li>";
-//           break;
-//       case 'TER' :
-//           document.getElementById("tarefaTerca").innerHTML += "<li>"+nomeDaTarefa+"</li>";
-//           break;
-//       case 'QUA' :
-//           document.getElementById("tarefaQuarta").innerHTML += "<li>"+nomeDaTarefa+"</li>";
-//           break;
-//       case 'QUI' :
-//           document.getElementById("tarefaQuinta").innerHTML += "<li>"+nomeDaTarefa+"</li>";
-//           break;
-//       case 'SEX' :
-//           document.getElementById("tarefaSexta").innerHTML += "<li>"+nomeDaTarefa+"</li>";
-//           break;
-//       case 'SAB' :
-//           document.getElementById("tarefaSabado").innerHTML += "<li>"+nomeDaTarefa+"</li>";
-//           break;
-//       case 'DOM' :
-//           document.getElementById("tarefaDomingo").innerHTML += "<li>"+nomeDaTarefa+"</li>";
-//           break;
-//   }
-//   document.getElementById("novaTarefa").value = "";
-// }
-
-
 
 function App() {
   const [tarefa, setTarefa] = useState('');
@@ -41,18 +9,25 @@ function App() {
 
   const onChangeTarefa = (ev) => {
     setTarefa(ev.target.value)
-    console.log(ev.target.value)
   };
   const onChangeDiaDaSemana = (ev) => {
     setDiaDaSemana(ev.target.value)
-    console.log(ev.target.value)
   };
   const mostrarTarefas = () => {
     axios.get('https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-julian-nathalia')
       .then(resposta => {
-        console.log(resposta.data)
         setListaTarefas(resposta.data)
       })
+  };
+  const limparTarefas = (idApagar) => {
+    const novaListaTarefas = listaTarefas.filter(objeto => {
+      if (objeto.id === idApagar){
+        return false;
+      } else {
+        return true;
+      }
+    });
+    setListaTarefas(novaListaTarefas)
   };
 
   const onClickAddTarefa = () => {
@@ -65,10 +40,10 @@ function App() {
     } else {
       axios.post('https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-julian-nathalia', body)
         .then(resposta => {
-          console.log(resposta.data)
+          setTarefa('')
+          mostrarTarefas()
         })
     }
-
   };
 
   useEffect(() => {
@@ -102,8 +77,10 @@ function App() {
     <BodyContainer>
       <h1>Planejamento Semanal</h1>
       <FormAdicionarTarefa>
-        <input type="text" placeholder="Digite sua tarefa" onChange={onChangeTarefa} />
-        <select placeholder="Dia da semana" onChange={onChangeDiaDaSemana}>
+      <label htmlFor={'Digite sua tarefa'}>Digite sua tarefa:</label>
+        <input type="text" placeholder="Digite sua tarefa" onChange={onChangeTarefa} required/>
+        <label htmlFor={'Dia da semana'}>Dia da semana:</label>
+        <select onChange={onChangeDiaDaSemana} id={'Dia da semana'} required>
           <option value="" ></option>
           <option value="Segunda" >Segunda</option>
           <option value="Terca" >Terça</option>
@@ -113,50 +90,50 @@ function App() {
           <option value="Sabado" >Sábado</option>
           <option value="Domingo" >Domingo</option>
         </select>
-        <button onClick={onClickAddTarefa}>Adicionar Tarefa</button>
-        <button>Limpar Planner</button>
+        <Button onClick={limparTarefas}>Limpar Planner</Button>
+        <Button onClick={onClickAddTarefa}>Adicionar Tarefa</Button>
       </FormAdicionarTarefa>
       <SectionDiasDaSemana>
         <ArticleDia>
           <TitleDia>Segunda</TitleDia>
           {segunda.map((dia) => {
-            return <ul key={dia.id}>{dia.text}</ul>
+            return <ul key={dia.id} onClick={() => limparTarefas(dia.id)}>{dia.text}</ul>
           })}
         </ArticleDia>
         <ArticleDia>
           <TitleDia>Terça</TitleDia>
           {terca.map((dia) => {
-            return <ul key={dia.id}>{dia.text}</ul>
+            return <ul key={dia.id} onClick={() => limparTarefas(dia.id)}>{dia.text}</ul>
           })}
         </ArticleDia>
         <ArticleDia>
           <TitleDia>Quarta</TitleDia>
           {quarta.map((dia) => {
-            return <ul key={dia.id}>{dia.text}</ul>
+            return <ul key={dia.id} onClick={() => limparTarefas(dia.id)}>{dia.text}</ul>
           })}
         </ArticleDia>
         <ArticleDia>
           <TitleDia>Quinta</TitleDia>
           {quinta.map((dia) => {
-            return <ul key={dia.id}>{dia.text}</ul>
+            return <ul key={dia.id} onClick={() => limparTarefas(dia.id)}>{dia.text}</ul>
           })}
         </ArticleDia>
         <ArticleDia>
           <TitleDia>Sexta</TitleDia>
           {sexta.map((dia) => {
-            return <ul key={dia.id}>{dia.text}</ul>
+            return <ul key={dia.id} onClick={() => limparTarefas(dia.id)}>{dia.text}</ul>
           })}
         </ArticleDia>
         <ArticleDia>
           <TitleDia>Sábado</TitleDia>
           {sabado.map((dia) => {
-            return <ul key={dia.id}>{dia.text}</ul>
+            return <ul key={dia.id} onClick={() => limparTarefas(dia.id)}>{dia.text}</ul>
           })}
         </ArticleDia>
         <ArticleDia>
           <TitleDia>Domingo</TitleDia>
           {domingo.map((dia) => {
-            return <ul key={dia.id}>{dia.text}</ul>
+            return <ul key={dia.id} onClick={() => limparTarefas(dia.id)}>{dia.text}</ul>
           })}
         </ArticleDia>
       </SectionDiasDaSemana>
