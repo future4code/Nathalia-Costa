@@ -23,7 +23,4 @@ const gabi = {
     idade: 12,
     corFavorita: ArcoIris.laranja
 };
-console.log('nath', nath);
-console.log('caio', caio);
-console.log('gabi', gabi);
 //# sourceMappingURL=exercicio1.js.map
