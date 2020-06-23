@@ -1,8 +1,25 @@
 "use strict";
-const nome = process.argv[2];
-const idade = Number(process.argv[3]);
-function programa(nome, idade) {
-    console.log(`Olá, ${nome}! Você tem ${idade} anos. Em sete anos vocÊ terá ${idade + 7}`);
+Object.defineProperty(exports, "__esModule", { value: true });
+const operacao = process.argv[2];
+const numberOne = Number(process.argv[3]);
+const numberTwo = Number(process.argv[4]);
+function aplicacao(operacao, numberOne, numberTwo) {
+    switch (operacao) {
+        case "add":
+            console.log(numberOne + numberTwo);
+            break;
+        case "sub":
+            console.log(numberOne - numberTwo);
+            break;
+        case "mult":
+            console.log(numberOne * numberTwo);
+            break;
+        case "div":
+            console.log(numberOne / numberTwo);
+            break;
+        default:
+            break;
+    }
 }
-programa(nome, idade);
+aplicacao(operacao, numberOne, numberTwo);
 //# sourceMappingURL=index.js.map
