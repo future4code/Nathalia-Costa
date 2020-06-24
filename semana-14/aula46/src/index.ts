@@ -1,4 +1,4 @@
-import * as moment from "moment"
+import moment from "moment"
 moment.locale("pt-br");
 
 type evento = {
@@ -22,4 +22,16 @@ const TodosOsEventos: evento[] = [
         termino: moment("25/12/2020 23:00", "DD/MM/YYYY HH:mm")
     }
 ]
-console.log(TodosOsEventos)
+
+// function mostrarEvento(nome: string, horarioInicial: moment.Moment, horarioTermino: moment.Moment, descricao: string){
+//     console.log("Nome: ", nome);
+//     console.log("Horário de início: ", horarioInicial.format("dddd, DD/MMMM/YYYY, HH:mm"));
+//     console.log("Horário de fim: ", horarioTermino.format("DD/MMMM/YYYY, HH:mm"));
+//     console.log("Descrição: ", descricao);
+// }
+function mostrarEvento(nome: string, horarioInicial: moment.Moment, horarioTermino: moment.Moment, descricao: string){
+    console.log("Nome: ", nome);
+    console.log("Horário de início: ", horarioInicial.format("dddd, DD/MMMM/YYYY, HH:mm"));
+    console.log("Horário de fim: ", horarioTermino.format("DD/MMMM/YYYY, HH:mm"));
+    console.log("Descrição: ", descricao);
+}
