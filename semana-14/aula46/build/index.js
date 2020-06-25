@@ -19,15 +19,38 @@ const TodosOsEventos = [
         termino: moment_1.default("25/12/2020 23:00", "DD/MM/YYYY HH:mm")
     }
 ];
-function mostrarEvento(arrayEv) {
+function mostrarEventos(arrayEv) {
     arrayEv.forEach((ev) => {
-        return (console.log(`
-            Nome: ${ev.nome}
-            Horário de início: ${ev.inicio.format("dddd, DD [de] MMMM [de] YYYY, HH:mm")}
-            Horário de fim: ${ev.termino.format("DD [de] MMMM [de] YYYY, HH:mm")}
-            Descrição: ${ev.descricao}`));
+        const duracao = ev.termino.diff(ev.inicio, "minutes");
+        const hoje = moment_1.default();
+        const tempo = ev.inicio.diff(hoje, "days");
+        console.log(`
+        Nome: ${ev.nome}
+        Horário de início: ${ev.inicio.format("dddd, DD [de] MMMM [de] YYYY, HH:mm")}
+        Horário de fim: ${ev.termino.format("DD [de] MMMM [de] YYYY, HH:mm")}
+        Descrição: ${ev.descricao}
+        Duração: ${duracao} minutos
+        Dias até o evento: ${tempo}`);
     });
 }
 ;
-mostrarEvento(TodosOsEventos);
+mostrarEventos(TodosOsEventos);
+const CriarEvento = (nome, descricao, inicio, termino) => {
+    if (!nome || !descricao || !inicio || !termino) {
+        console.error('Erro, tente novamente.');
+        return;
+    }
+    const diffStartAtAndToday = inicio.diff(moment_1.default(), "seconds");
+    const diffFinishAtAndToday = termino.diff(moment_1.default(), "seconds");
+    if (diffStartAtAndToday < 0 && diffFinishAtAndToday < 0) {
+        console.log("Essa data já passou, acho que você tá atrasad@.");
+        return;
+    }
+    TodosOsEventos.push({
+        nome,
+        descricao,
+        inicio,
+        termino,
+    });
+};
 //# sourceMappingURL=index.js.map
