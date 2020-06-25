@@ -1,10 +1,9 @@
 {
   "name": "aula46",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node bulid/index.js",
+    "start": "tsc && node build/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Nathalia_Costa",
@@ -13,5 +12,7 @@
     "@types/node": "^14.0.14",
     "moment": "^2.27.0",
     "typescript": "^3.9.5"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }

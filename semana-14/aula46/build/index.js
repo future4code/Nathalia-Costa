@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const moment_1 = __importDefault(require("moment"));
-moment_1.default.locale("pt-br");
+moment_1.default.locale('pt-br');
 const TodosOsEventos = [
     {
         nome: "São João",
@@ -19,5 +19,15 @@ const TodosOsEventos = [
         termino: moment_1.default("25/12/2020 23:00", "DD/MM/YYYY HH:mm")
     }
 ];
-console.log(TodosOsEventos);
+function mostrarEvento(arrayEv) {
+    arrayEv.forEach((ev) => {
+        return (console.log(`
+            Nome: ${ev.nome}
+            Horário de início: ${ev.inicio.format("dddd, DD [de] MMMM [de] YYYY, HH:mm")}
+            Horário de fim: ${ev.termino.format("DD [de] MMMM [de] YYYY, HH:mm")}
+            Descrição: ${ev.descricao}`));
+    });
+}
+;
+mostrarEvento(TodosOsEventos);
 //# sourceMappingURL=index.js.map

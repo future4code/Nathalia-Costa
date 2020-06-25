@@ -1,6 +1,7 @@
-import moment from "moment"
-moment.locale("pt-br");
+import moment from "moment";
+moment.locale('pt-br');
 
+// EXERCICIO 01
 type evento = {
     nome: string,
     descricao: string,
@@ -21,17 +22,21 @@ const TodosOsEventos: evento[] = [
         inicio: moment("24/12/2020 20:00", "DD/MM/YYYY HH:mm"),
         termino: moment("25/12/2020 23:00", "DD/MM/YYYY HH:mm")
     }
-]
+];
 
-// function mostrarEvento(nome: string, horarioInicial: moment.Moment, horarioTermino: moment.Moment, descricao: string){
-//     console.log("Nome: ", nome);
-//     console.log("Horário de início: ", horarioInicial.format("dddd, DD/MMMM/YYYY, HH:mm"));
-//     console.log("Horário de fim: ", horarioTermino.format("DD/MMMM/YYYY, HH:mm"));
-//     console.log("Descrição: ", descricao);
-// }
-function mostrarEvento(nome: string, horarioInicial: moment.Moment, horarioTermino: moment.Moment, descricao: string){
-    console.log("Nome: ", nome);
-    console.log("Horário de início: ", horarioInicial.format("dddd, DD/MMMM/YYYY, HH:mm"));
-    console.log("Horário de fim: ", horarioTermino.format("DD/MMMM/YYYY, HH:mm"));
-    console.log("Descrição: ", descricao);
-}
+// EXERCICIO 02
+// A --
+function mostrarEvento(arrayEv: evento[]) {
+    arrayEv.forEach((ev: evento) => {
+        return(
+            console.log(`
+            Nome: ${ev.nome}
+            Horário de início: ${ev.inicio.format("dddd, DD [de] MMMM [de] YYYY, HH:mm")}
+            Horário de fim: ${ev.termino.format("DD [de] MMMM [de] YYYY, HH:mm")}
+            Descrição: ${ev.descricao}`)
+        );
+    });
+};
+mostrarEvento(TodosOsEventos);
+
+// B -- USAR utcOffset("FUSO-HORARIO");
