@@ -35,7 +35,8 @@ function mostrarEventos(arrayEv) {
 }
 ;
 mostrarEventos(TodosOsEventos);
-const CriarEvento = (nome, descricao, inicio, termino) => {
+console.error("Add evento --");
+function CriarEvento(nome, descricao, inicio, termino) {
     if (!nome || !descricao || !inicio || !termino) {
         console.error('Erro, tente novamente.');
         return;
@@ -52,5 +53,7 @@ const CriarEvento = (nome, descricao, inicio, termino) => {
         inicio,
         termino,
     });
-};
+}
+CriarEvento("Meu aniversario", "Pandemia ? sem festa : cachaça", moment_1.default("10/07/2020 14:00", "DD/MM/YYYY HH:mm"), moment_1.default("10/07/2020 23:00", "DD/MM/YYYY HH:mm"));
+mostrarEventos(TodosOsEventos);
 //# sourceMappingURL=index.js.map
