@@ -1,0 +1,23 @@
+{
+  "name": "aula47",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node build/exercicio01.js",
+    "second": "tsc && node build/exercicio02.js",
+    "third": "tsc && node build/exercicio03.js",
+    "fourth": "tsc && node build/exercicio04.js",
+    "fifth": "tsc && node build/exercicio05.js",
+    "sixth": "tsc && node build/exercicio06.js",
+    "seventh": "tsc && node build/exercicio07.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nathalia-Costa",
+  "license": "ISC",
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "axios": "^0.19.2",
+    "typescript": "^3.9.5"
+  }
+}
