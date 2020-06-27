@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { NavContainer, ImgLogoNav, ButtonsNav, ButtonNav } from "../styled";
-import LogoNav from '../Logo2.png';
+import LogoNav from '../../components/Imagens/Logo2.png';
 
 const NavAdmin = () => {
     const history = useHistory();

@@ -1,6 +1,6 @@
 import React from 'react';
-import Logo from '../Logo2.png';
-import { HomeContainer, NavHome, ButtonLogin, BodyHome, ImgLogo, TextoHome, ButtonVerViagens } from '../styled'
+import Logo from '../../components/Imagens/Logo2.png';
+import { HomeContainer, NavHome, ButtonLogin, BodyHome, ImgLogo, TextoHome, ButtonVerViagens } from '../styled';
 import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 
