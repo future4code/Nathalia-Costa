@@ -9,13 +9,12 @@ export class JSONFileManager{
     }
 
     public getObjectFromFile(): Object {
-        const fileBuffer: Buffer = fs.readFileSync(this.fileName)
-        const fileText: string = String(fileBuffer)
-        return fileText ? JSON.parse(fileText) : []
+        const file: Buffer | string = fs.readFileSync(this.fileName).toString("utf-8")
+        return file ? JSON.parse(file) : []
     }
 
     public writeObjectToFile(data: any): void{
-        const updatedData: string = JSON.stringify(data,null, 3)
+        const updatedData: string = JSON.stringify(data,null, 2)
         fs.writeFileSync(this.fileName, updatedData)
     }
 }
