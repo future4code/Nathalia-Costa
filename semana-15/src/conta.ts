@@ -8,12 +8,12 @@ export class conta {
     //  Atributos
     private nome: string
     private cpf: string
-    private idade: number
+    private idade: string
     private saldoAtual: number = 0
     private extrato: Array<Object> = []
     // {valor: number, data: string, descricao: string}
 
-    constructor( nome: string, cpf: string, idade: number){
+    constructor( nome: string, cpf: string, idade: string){
         this.nome = nome
         this.cpf = cpf
         this.idade = idade
@@ -26,7 +26,7 @@ export class conta {
     public getCPF(): string{
         return this.cpf
     }
-    public getIdade(): number{
+    public getIdade(): string{
         return this.idade
     }
     public getSaldoAtual(): number{

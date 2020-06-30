@@ -3,7 +3,7 @@ import { JSONFileManager } from './JSONFileManager';
 
 const nome: string = process.argv[2];
 const cpf: string = process.argv[3];
-const idade: number = process.argv[4];
+const idade: string = process.argv[4];
 
 const criarConta: conta = new conta(nome, cpf, idade);
 
