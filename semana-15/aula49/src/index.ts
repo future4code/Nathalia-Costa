@@ -1,11 +1,11 @@
-type person = {
-  name: string
-}
+import { User } from './User'
+import { Customer } from './Customer'
 
-function createPerson(name: string): person {
-	return {name: name} 
-} 
+const userInstancia: User = new User('1', 'astro@dev.com', 'Astrodev', '123456')
 
-const myPerson2 = createPerson("Robson");
+console.log('UserID:', userInstancia.getId())
+console.log('UserName:', userInstancia.getName())
+console.log('UserEmail:', userInstancia.getEmail())
 
-console.log(myPerson2);
+const CustomerInstancia: Customer = new Customer('2', 'nath@dev.com', 'nath', '96321', '852-741-963')
+console.log(CustomerInstancia)
