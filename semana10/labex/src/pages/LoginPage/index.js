@@ -13,7 +13,7 @@ import {
 } from "../styled";
 import Fab from "@material-ui/core/Fab";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-import LogoLogin from "../Logo2.png";
+import LogoLogin from "../../components/Imagens/Logo2.png";
 
 const baseUrl =
   "https://us-central1-labenu-apis.cloudfunctions.net/labeX/nathalia-julian";

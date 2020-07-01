@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useHistory, useParams } from "react-router-dom";
+import { useForm } from "../../components/Hooks";
 import {
   InscricaoContainer,
   CardInscricao,
@@ -7,10 +10,8 @@ import {
   ButtonInscricao,
   ButtonsInscricao
 } from "../styled";
-import LogoLogin from "../Logo2.png";
-import { useHistory, useParams } from "react-router-dom";
-import axios from "axios";
-import { useForm } from "../../components/Hooks";
+import LogoLogin from "../../components/Imagens/Logo2.png";
+
 
 const IncricaoPage = (props) => {
   const history = useHistory();

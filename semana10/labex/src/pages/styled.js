@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import back from '../components/back.jpg';
+import back from '../components/Imagens/back.jpg';
 import Button from '@material-ui/core/Button';
 import { TextField, Fab } from '@material-ui/core';
 

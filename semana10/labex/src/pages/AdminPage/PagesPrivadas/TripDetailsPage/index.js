@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
 import {
   RequestContainer, 
   GridCards,
@@ -9,8 +11,6 @@ import {
   ButtonsCard,
   ButtonRequest
 } from "../../../styled";
-import { useHistory } from "react-router-dom";
-import axios from "axios";
 
 const TripDetailsPage = () => {
   const history = useHistory();
