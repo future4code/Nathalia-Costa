@@ -44,4 +44,4 @@ console.log('SellerCalculateTotalSalary: R$', SellerInstancia.calculateTotalSala
 // SellerAdmissionDate, SellerCalculateTotalSalary
 
 console.log('SellerSaleQuantity:', SellerInstancia.setSalesQuantity(2))
-
+// 9. a - retorna underfined. 
