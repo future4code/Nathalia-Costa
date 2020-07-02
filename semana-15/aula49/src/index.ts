@@ -20,5 +20,10 @@ const CustomerInstancia: Customer = new Customer('2', 'nath@dev.com', 'nath', '9
 
 const EmployeeInstancia: Employee = new Employee('3', 'lili@dev.com', 'Lica', '741258', "08/05/2018", 1856.00)
 console.log(EmployeeInstancia)
+console.log('EmployeeID:', EmployeeInstancia.getId())
+console.log('EmployeeName:', EmployeeInstancia.getName())
+console.log('EmployeeEmail:', EmployeeInstancia.getEmail())
+console.log('EmployeeBaseSalary:', EmployeeInstancia.getBaseSalary())
+console.log('EmployeeAdmissionDate:', EmployeeInstancia.getAdmissionDate())
 // 4. a - O construtor da classe user foi chamado User.
 // b. console log em EmployeeInstancia --> id, email, name, password, admissionDate e baseSalary.
