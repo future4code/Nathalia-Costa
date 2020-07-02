@@ -32,7 +32,7 @@ const EmployeeInstancia: Employee = new Employee('3', 'lili@dev.com', 'Lica', '7
 
 const SellerInstancia: Seller = new Seller('4', 'kio@dev.com', 'kio', '369852', '05/08/2008', 2500)
 
-console.log(SellerInstancia)
+// console.log(SellerInstancia)
 console.log('SellerID:', SellerInstancia.getId())
 console.log('SellerName:', SellerInstancia.getName())
 console.log('SellerEmail:', SellerInstancia.getEmail())
@@ -42,4 +42,6 @@ console.log('SellerCalculateTotalSalary: R$', SellerInstancia.calculateTotalSala
 // 8. a - id, email, name, password, admissionDate e baseSalary.
 // b - Imprimiu tudo. SellerID, SellerName, SellerEmail, SellerBaseSalary, 
 // SellerAdmissionDate, SellerCalculateTotalSalary
+
+console.log('SellerSaleQuantity:', SellerInstancia.setSalesQuantity(2))
 
