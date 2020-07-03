@@ -1,4 +1,4 @@
-import { Place } from "../ClassesAbstratas/Place";
+import { Place } from "./Place";
 
 export class Industry extends Place {
     constructor(protected machinesQuantity: number, cep: string){

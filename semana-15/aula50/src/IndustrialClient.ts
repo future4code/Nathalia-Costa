@@ -1,5 +1,5 @@
 import { Industry } from "./Industry";
-import { Client } from "../Interfaces/Client";
+import { Client } from "./Client";
 
 export class IndustrialClient extends Industry implements Client{
     constructor(

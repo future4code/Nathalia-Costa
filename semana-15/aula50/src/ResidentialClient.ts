@@ -1,5 +1,5 @@
 import { Residence } from "./Residence";
-import { Client } from "../Interfaces/Client";
+import { Client } from "./Client";
 
 export class ResidentialClient extends Residence implements Client{
 

@@ -1,5 +1,5 @@
 import { Commerce } from "./Commerce";
-import { Client } from "../Interfaces/Client";
+import { Client } from "./Client";
 
 export class CommercialClient extends Commerce implements Client{
     constructor(
