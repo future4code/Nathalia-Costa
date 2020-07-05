@@ -9,7 +9,7 @@ export abstract class Mission {
         protected dateEnd: moment.Moment,
         protected teachersList: Teacher[],
         protected studentsList: Student[],
-        private currentModule?: number = undefined
+        private currentModule?: number
     ) {}
     public getId(): string{
         return this.id;
@@ -30,9 +30,9 @@ export abstract class Mission {
         this.studentsList.push(student)
     }
     public getCurrentModule(): number | undefined {
-        return this.currentModule;
+        return this.currentModule
     }
     public setName(name: string) {
-        this.name = name;
+        this.name = name
     }
 }

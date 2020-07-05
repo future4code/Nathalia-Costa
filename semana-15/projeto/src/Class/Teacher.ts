@@ -1,6 +1,6 @@
 import { User } from "../Interface/User";
 
-enum TEACHER_SPECIALTY {
+export enum TEACHER_SPECIALTY {
     REACT = "REACT",
     REDUX = "REDUX",
     CSS = "CSS",
@@ -18,3 +18,5 @@ export class Teacher implements User {
       public specialties: TEACHER_SPECIALTY[]
     ) {}
 }
+
+export const teacherOne = new Teacher('1', 'Maria', 'maria@f4.com', [TEACHER_SPECIALTY.CSS, TEACHER_SPECIALTY.REDUX, TEACHER_SPECIALTY.TESTES])

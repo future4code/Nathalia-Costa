@@ -1,24 +1,6 @@
 import { Mission } from "./Mission";
-import { Teacher } from "./Teacher";
-import { Student } from "./Student";
+import moment from "moment";
 
-export class FullTimeMission extends Mission {
-    constructor(
-        public MissionName: string,
-        id: string,
-        dateStart: moment.Moment,
-        dateEnd: moment.Moment,
-        teachersList: Teacher[],
-        studentsList: Student[],
-        currentModule: number | undefined
-    ){
-        super(
-            id,
-            dateStart,
-            dateEnd,
-            teachersList,
-            studentsList,
-            currentModule
-        )
-    }
-}
+export class FullTimeMission extends Mission {}
+
+export const fullTimeMission = new FullTimeMission('1', moment('14/02/2020', "DD/MM/YYYY"), moment('14/09/2020', 'DD/MM/YYYY'),[], [], 5)

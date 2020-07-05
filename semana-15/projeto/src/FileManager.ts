@@ -17,15 +17,15 @@ export class FileManager {
   }
 }
 
-const fm = new FileManager("arquivo");
+//const fm = new FileManager("arquivo");
 
 // imprime as infos do arquivo
-console.log(fm.readFile());
+//console.log(fm.readFile());
 
-fm.setFilePath("outro-arquivo");
+//fm.setFilePath("outro-arquivo");
 
 // escreve no arquivo
-fm.writeFile({
-  id: "1",
-  name: "Goli",
-});
+//fm.writeFile({
+//  id: "1",
+//  name: "Goli",
+//});
