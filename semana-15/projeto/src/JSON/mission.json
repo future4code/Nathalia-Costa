@@ -1,0 +1,144 @@
+[
+    {
+        "id": "1",
+        "dateStart": "2020-02-14T03:00:00.000Z",
+        "dateEnd": "2020-09-14T03:00:00.000Z",
+        "teachersList": [
+            {
+                "id": "1",
+                "name": "Maria",
+                "email": "maria@f4.com",
+                "specialties": [
+                    "CSS",
+                    "REDUX",
+                    "TESTES"
+                ]
+            }
+        ],
+        "studentsList": [
+            {
+                "id": "123",
+                "name": "nath",
+                "email": "nath@f4.com",
+                "birthDate": "1995-07-10T03:00:00.000Z",
+                "hobbies": [
+                    "cantar",
+                    "dançar"
+                ]
+            },
+            {
+                "id": "456",
+                "name": "thalia",
+                "email": "thalia@f4.com",
+                "birthDate": "1990-10-08T03:00:00.000Z",
+                "hobbies": [
+                    "ciclismo",
+                    "musica"
+                ]
+            }
+        ],
+        "currentModule": 5,
+        "name": "Nice"
+    },
+    {
+        "id": "2",
+        "dateStart": "2020-05-10T03:00:00.000Z",
+        "dateEnd": "2020-11-10T03:00:00.000Z",
+        "teachersList": [],
+        "studentsList": [
+            {
+                "id": "789",
+                "name": "gabi",
+                "email": "gabi@f4.com",
+                "birthDate": "2000-02-07T02:00:00.000Z",
+                "hobbies": [
+                    "desenhar",
+                    "dançar"
+                ]
+            },
+            {
+                "id": "1011",
+                "name": "helo",
+                "email": "helo@f4.com",
+                "birthDate": "2000-02-07T02:00:00.000Z",
+                "hobbies": [
+                    "procrastinar",
+                    "musica"
+                ]
+            }
+        ],
+        "currentModule": 7,
+        "name": "Jaca-na-night"
+    },
+    {
+        "id": "1",
+        "dateStart": "2020-02-14T03:00:00.000Z",
+        "dateEnd": "2020-09-14T03:00:00.000Z",
+        "teachersList": [
+            {
+                "id": "1",
+                "name": "Maria",
+                "email": "maria@f4.com",
+                "specialties": [
+                    "CSS",
+                    "REDUX",
+                    "TESTES"
+                ]
+            }
+        ],
+        "studentsList": [
+            {
+                "id": "123",
+                "name": "nath",
+                "email": "nath@f4.com",
+                "birthDate": "1995-07-10T03:00:00.000Z",
+                "hobbies": [
+                    "cantar",
+                    "dançar"
+                ]
+            },
+            {
+                "id": "456",
+                "name": "thalia",
+                "email": "thalia@f4.com",
+                "birthDate": "1990-10-08T03:00:00.000Z",
+                "hobbies": [
+                    "ciclismo",
+                    "musica"
+                ]
+            }
+        ],
+        "currentModule": 5,
+        "name": "Nice"
+    },
+    {
+        "id": "2",
+        "dateStart": "2020-05-10T03:00:00.000Z",
+        "dateEnd": "2020-11-10T03:00:00.000Z",
+        "teachersList": [],
+        "studentsList": [
+            {
+                "id": "789",
+                "name": "gabi",
+                "email": "gabi@f4.com",
+                "birthDate": "2000-02-07T02:00:00.000Z",
+                "hobbies": [
+                    "desenhar",
+                    "dançar"
+                ]
+            },
+            {
+                "id": "1011",
+                "name": "helo",
+                "email": "helo@f4.com",
+                "birthDate": "2000-02-07T02:00:00.000Z",
+                "hobbies": [
+                    "procrastinar",
+                    "musica"
+                ]
+            }
+        ],
+        "currentModule": 7,
+        "name": "Jaca-na-night"
+    }
+]

@@ -20,3 +20,4 @@ export class Teacher implements User {
 }
 
 export const teacherOne = new Teacher('1', 'Maria', 'maria@f4.com', [TEACHER_SPECIALTY.CSS, TEACHER_SPECIALTY.REDUX, TEACHER_SPECIALTY.TESTES])
+export const teacherTwo = new Teacher('2', 'Marilia', 'marilia@f4.com', [TEACHER_SPECIALTY.TYPESCRIPT, TEACHER_SPECIALTY.BACKEND, TEACHER_SPECIALTY.OOP])

@@ -1,0 +1,42 @@
+[
+    {
+        "id": "123",
+        "name": "nath",
+        "email": "nath@f4.com",
+        "birthDate": "1995-07-10T03:00:00.000Z",
+        "hobbies": [
+            "cantar",
+            "dançar"
+        ]
+    },
+    {
+        "id": "456",
+        "name": "thalia",
+        "email": "thalia@f4.com",
+        "birthDate": "1990-10-08T03:00:00.000Z",
+        "hobbies": [
+            "ciclismo",
+            "musica"
+        ]
+    },
+    {
+        "id": "123",
+        "name": "nath",
+        "email": "nath@f4.com",
+        "birthDate": "1995-07-10T03:00:00.000Z",
+        "hobbies": [
+            "cantar",
+            "dançar"
+        ]
+    },
+    {
+        "id": "456",
+        "name": "thalia",
+        "email": "thalia@f4.com",
+        "birthDate": "1990-10-08T03:00:00.000Z",
+        "hobbies": [
+            "ciclismo",
+            "musica"
+        ]
+    }
+]

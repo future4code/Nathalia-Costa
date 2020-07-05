@@ -1,0 +1,22 @@
+[
+    {
+        "id": "1",
+        "name": "Maria",
+        "email": "maria@f4.com",
+        "specialties": [
+            "CSS",
+            "REDUX",
+            "TESTES"
+        ]
+    },
+    {
+        "id": "1",
+        "name": "Maria",
+        "email": "maria@f4.com",
+        "specialties": [
+            "CSS",
+            "REDUX",
+            "TESTES"
+        ]
+    }
+]

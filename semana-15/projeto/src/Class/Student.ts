@@ -17,7 +17,6 @@ export class Student implements User {
 }
 
 export const firstStudent: Student = new Student('123', 'nath', 'nath@f4.com', moment('10-07-1995', 'DD/MM/YYYY'), ['cantar', 'dançar']);
-// const studentTwo: Student = new Student('456', 'thalia', 'thalia@f4.com', moment('08-10-1990', 'DD/MM/YYYY'), ['ciclismo', 'musica']);
-
-
-console.log(firstStudent)
+export const secondStudent: Student = new Student('456', 'thalia', 'thalia@f4.com', moment('08-10-1990', 'DD/MM/YYYY'), ['ciclismo', 'musica']);
+export const thirdStudent: Student = new Student('789', 'gabi', 'gabi@f4.com', moment('07-02-2000', 'DD/MM/YYYY'), ['desenhar', 'dançar']);
+export const fourthStudent: Student = new Student('1011', 'helo', 'helo@f4.com', moment('07-02-2000', 'DD/MM/YYYY'), ['procrastinar', 'musica']);
