@@ -1,6 +1,6 @@
 import { db } from "./dataSetup";
 
-const usersTable = "ToDoListUsers";
+export const usersTable = "ToDoListUsers";
 
 export const createUser = async (
     name: string, 
@@ -27,4 +27,11 @@ export const getUserById = async (id:string): Promise<any> => {
     })
 
     return result[0];
-}
+};
+
+export const updateUser = async(id:string, name?: string, nickname?: string): Promise<void> => {
+    await db()
+    .update({name, nickname})
+    .where({id})
+    .into(usersTable)
+};

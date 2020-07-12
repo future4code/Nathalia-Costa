@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { createUser, getUserById } from "../data/users"
+import { createUser, getUserById, updateUser } from "../data/users"
 
 export const createUserEndPoint = async (req: Request, res: Response
 ): Promise<void> => {
@@ -36,6 +36,27 @@ export const getUserByIdEndpoint = async (
             id: user.id,
             name: user.name
         })
+    } catch (error) {
+        res.status(400).send({ message: error.message })
+    }
+}
+
+export const updateUserEndpoint = async (
+    req: Request, res: Response) => {
+    try {
+        if(
+            req.body.name === "" ||
+            req.body.nickname === "" ||
+            !req.body.id
+        ){
+            throw new Error("Parametros invalidos")
+        }
+        await updateUser(
+            req.body.id,
+            req.body.name,
+            req.body.nickname
+        )
+        res.sendStatus(200)
     } catch (error) {
         res.status(400).send({ message: error.message })
     }
