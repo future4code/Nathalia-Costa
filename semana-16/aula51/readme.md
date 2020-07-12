@@ -38,7 +38,41 @@
 **B.**
 - SELECT name, salary from Actor WHERE name = "Tony Ramos";
 
+**C.**
+- SELECT * from Actor WHERE gender = "invalid";
+
+**D.**
+- SELECT id, name, salary from Actor WHERE salary < 500000;
+
 **E.**
 - Error Code: 1054. Unknown column 'nome' in 'field list'
+- SELECT id, name from Actor WHERE id = "002";
 
+#### Exercicio 04
 
+**A.**
+- A query é auto explicativa, selecionamos a tabela por completo com "SELECT * FROM Actor" e logo após damos condições com o "WHERE" na coluna 'name' o que começar com A ou J, e também tiver o salario acima de 300.000. Dessa forma:
+"WHERE (name LIKE "A%" or NAME like "J%") AND salary > 300000;"
+
+**B.**
+- WHERE (name NOT LIKE "A%") AND salary > 350000;
+
+**C.**
+- WHERE name LIKE "%G%" or NAME like "%g%";
+
+**D.**
+- WHERE (name LIKE "%G%" or name LIKE "%g%" or name LIKE "%A%" or name LIKE "%a%") AND salary between 350000 AND 900000;
+
+#### Exercicio 05
+
+**A.**
+
+CREATE TABLE Movies(
+	id VARCHAR(255) PRIMARY KEY,
+    	nome VARCHAR(255) NOT NULL UNIQUE,
+    	sinopse TEXT NOT NULL,
+    	data_de_lancamento DATE NOT NULL,
+    	avaliacao INT NOT NULL
+);
+
+#### Exercicio 06
