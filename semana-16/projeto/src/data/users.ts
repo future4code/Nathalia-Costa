@@ -18,3 +18,13 @@ export const createUser = async (
         .into(usersTable)
 };
 
+export const getUserById = async (id:string): Promise<any> => {
+    const result = await db()
+    .select("*")
+    .from(usersTable)
+    .where({
+        id
+    })
+
+    return result[0];
+}
