@@ -42,6 +42,31 @@ app.post("/signup", async (req: Request, res: Response) =>{
   }
 });
 
+app.post("/login", async (req: Request, res: Response) =>{
+  try {
+
+    const userData = {
+      email: req.body.email,
+      password: req.body.password
+    };
+    
+    const userDatabase = new UserDatabase();
+    const user = await userDatabase.getUserByEmail(userData.email);
+
+    if(user.password !== userData.password){
+      throw new Error("Invalid password");
+    }
+
+    const authenticator = new Authenticator();
+    const token = authenticator.generateToken({id: user.id});
+
+    res.status(200).send({token})
+
+  } catch (error) {
+    res.status(400).send({message: error.message})
+  }
+});
+
 const server = app.listen(process.env.PORT || 3003, () => {
   if (server) {
     const address = server.address() as AddressInfo;

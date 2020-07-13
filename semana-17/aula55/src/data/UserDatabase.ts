@@ -20,7 +20,7 @@ export class UserDatabase {
     password: string
   ){
       try {
-        
+
         await this.connection
         .insert({
           id,
@@ -32,5 +32,19 @@ export class UserDatabase {
       } catch (err) {
         throw new Error(err.sqlMessage || err.message)  
       }
+  };
+  public async getUserByEmail(email: string): Promise<any>{
+    
+    try {
+      const result =  await this.connection
+      .select("*")
+      .from(this.USER_TABLE)
+      .where({email});
+
+      return result[0];
+      
+    } catch (err) {
+      throw new Error(err.sqlMessage || err.message) 
+    }
   }
 }
