@@ -18,4 +18,6 @@ b. CREATE TABLE User(
 
 a. Ela declara que o que vem do "process.env. JWT_KEY" é uma string. Para dar a certeza que o que a resposta disso é um string.
 
-b. 
+#### Exercicio 07
+
+a. as nay tá informando que retornará qualquer coisa nessa variavel.
