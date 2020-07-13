@@ -2,6 +2,7 @@ import knex from "knex";
 
 export class UserDatabase {
 
+  private USER_TABLE = "User";
   private connection = knex({
     client: "mysql",
     connection: {
@@ -9,23 +10,27 @@ export class UserDatabase {
       port: 3306,
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
+      database: process.env.DB_DATABASE,
     },
   });
-
-  private static USER_TABLE = "User";
 
   public async createUser(
     id: string,
     email: string, 
     password: string
-  ): Promise<void> {
-    await this.connection
-      .insert({
-        id,
-        email,
-        password
-      })
-      .into(UserDatabase.USER_TABLE)
+  ){
+      try {
+        
+        await this.connection
+        .insert({
+          id,
+          email,
+          password
+        })
+        .into(this.USER_TABLE)
+
+      } catch (err) {
+        throw new Error(err.sqlMessage || err.message)  
+      }
   }
 }

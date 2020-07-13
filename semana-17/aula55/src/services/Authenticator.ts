@@ -1,17 +1,18 @@
 import * as jwt from "jsonwebtoken";
 
-export class Authenticator{
-    private static EXPIRES_IN = "1min";
+interface AuthenticationData {
+    id: string;
+};
 
-    public generateToken(input: AuthenticationData){
+export class Authenticator{
+    private static EXPIRES_IN = "2min";
+
+    public generateToken(input: AuthenticationData): string {
         const token = jwt.sign(
             {id: input.id}, 
-            process.env.JWT_KEY as string,
+            "babi",
             {expiresIn: Authenticator.EXPIRES_IN}
         );
         return token
     }
-}
-export interface AuthenticationData {
-    id: string;
-}
+};
