@@ -44,12 +44,16 @@ app.post("/signup", async (req: Request, res: Response) =>{
 
 app.post("/login", async (req: Request, res: Response) =>{
   try {
-
+        
+    if(!req.body.email || req.body.email.indexOf('@') === -1){
+      throw new Error("Invalid Email");
+    };
+    
     const userData = {
       email: req.body.email,
       password: req.body.password
     };
-    
+
     const userDatabase = new UserDatabase();
     const user = await userDatabase.getUserByEmail(userData.email);
 
