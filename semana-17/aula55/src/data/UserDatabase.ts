@@ -42,9 +42,17 @@ export class UserDatabase {
       .where({email});
 
       return result[0];
-      
+
     } catch (err) {
       throw new Error(err.sqlMessage || err.message) 
     }
+  }
+  public async getUserById(id: string): Promise<any>{
+    const result = await this.connection
+      .select("*")
+      .from(this.USER_TABLE)
+      .where({id});
+
+    return result[0]
   }
 }

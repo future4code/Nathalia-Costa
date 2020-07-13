@@ -48,7 +48,7 @@ app.post("/login", async (req: Request, res: Response) =>{
     if(!req.body.email || req.body.email.indexOf('@') === -1){
       throw new Error("Invalid Email");
     };
-    
+
     const userData = {
       email: req.body.email,
       password: req.body.password
@@ -65,6 +65,25 @@ app.post("/login", async (req: Request, res: Response) =>{
     const token = authenticator.generateToken({id: user.id});
 
     res.status(200).send({token})
+
+  } catch (error) {
+    res.status(400).send({message: error.message})
+  }
+});
+
+app.get("/user/profile", async (req: Request, res: Response) =>{
+  try {
+    
+    const token = req.headers.authorization as string;
+    console.log(token);
+
+    const authenticator = new Authenticator();
+    const authenticationData = authenticator.getData(token);
+
+    const userDatabase = new UserDatabase();
+    const user = await userDatabase.getUserById(authenticationData.id);
+
+    res.status(200).send(user)
 
   } catch (error) {
     res.status(400).send({message: error.message})
