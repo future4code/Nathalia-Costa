@@ -1,7 +1,7 @@
 import * as jwt from "jsonwebtoken";
 
 export class Authenticator {
-  private static EXPIRES_IN = "1min";
+  private static EXPIRES_IN = "2min";
   public generateToken(input: AuthenticationData): string {
     const token = jwt.sign(
       {
@@ -19,6 +19,7 @@ export class Authenticator {
     const payload = jwt.verify(token, process.env.JWT_KEY as string) as any;
     const result = {
       id: payload.id,
+      role: payload.role
     };
     return result;
   }
@@ -26,4 +27,5 @@ export class Authenticator {
 
 interface AuthenticationData {
   id: string;
+  role: string;
 }

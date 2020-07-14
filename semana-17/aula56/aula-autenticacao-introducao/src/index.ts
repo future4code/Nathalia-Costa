@@ -27,6 +27,7 @@ app.post("/signup", async (req: Request, res: Response) => {
     const userData = {
       email: req.body.email,
       password: req.body.password,
+      role: req.body.role
     };
 
     const idGenerator = new IdGenerator();
@@ -36,11 +37,12 @@ app.post("/signup", async (req: Request, res: Response) => {
     const hashPassword = await hashManager.hash(userData.password)
 
     const userDb = new UserDatabase();
-    await userDb.createUser(id, userData.email, hashPassword);
+    await userDb.createUser(id, userData.email, hashPassword, userData.role);
 
     const authenticator = new Authenticator();
     const token = authenticator.generateToken({
       id,
+      role: userData.role
     });
 
     res.status(200).send({
@@ -78,6 +80,7 @@ app.post("/login", async (req: Request, res: Response) => {
     const authenticator = new Authenticator();
     const token = authenticator.generateToken({
       id: user.id,
+      role: user.role
     });
 
     res.status(200).send({
@@ -97,12 +100,16 @@ app.get("/user/profile", async (req: Request, res: Response) => {
     const authenticator = new Authenticator();
     const authenticationData = authenticator.getData(token);
 
+    if(authenticationData.role !== "PUBLICO"){
+      throw new Error("Only a normal user can acess this funcionality")
+    }
     const userDb = new UserDatabase();
     const user = await userDb.getUserById(authenticationData.id);
 
     res.status(200).send({
       id: user.id,
       email: user.email,
+      role: authenticationData.role
     });
   } catch (err) {
     res.status(400).send({

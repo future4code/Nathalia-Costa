@@ -17,13 +17,15 @@ export class UserDatabase {
   public async createUser(
     id: string,
     email: string,
-    password: string
+    password: string, 
+    role: string
   ): Promise<void> {
     await this.connection
       .insert({
         id,
         email,
         password,
+        role
       })
       .into(UserDatabase.TABLE_NAME);
   }
