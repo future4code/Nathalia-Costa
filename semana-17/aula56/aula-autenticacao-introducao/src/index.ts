@@ -4,6 +4,7 @@ import { AddressInfo } from "net";
 import { IdGenerator } from "./services/IdGenerator";
 import { UserDatabase } from "./data/UserDatabase";
 import { Authenticator } from "./services/Authenticator";
+import { HashManager } from "./services/HashManager";
 
 dotenv.config();
 
@@ -31,8 +32,11 @@ app.post("/signup", async (req: Request, res: Response) => {
     const idGenerator = new IdGenerator();
     const id = idGenerator.generate();
 
+    const hashManager = new HashManager();
+    const hashPassword = await hashManager.hash(userData.password)
+
     const userDb = new UserDatabase();
-    await userDb.createUser(id, userData.email, userData.password);
+    await userDb.createUser(id, userData.email, hashPassword);
 
     const authenticator = new Authenticator();
     const token = authenticator.generateToken({
@@ -64,7 +68,10 @@ app.post("/login", async (req: Request, res: Response) => {
     const userDatabase = new UserDatabase();
     const user = await userDatabase.getUserByEmail(userData.email);
 
-    if (user.password !== userData.password) {
+    const hashManager = new HashManager();
+    const comparePassword = await hashManager.compare(userData.password, user.password);
+
+    if (!comparePassword) {
       throw new Error("Invalid password");
     }
 
