@@ -1,0 +1,23 @@
+[
+  {
+    "nome": "Cain",
+    "nascimento": "19/11/2022",
+    "cpf": "555.555.555-55",
+    "saldoAtual": 0,
+    "extrato": []
+  },
+  {
+    "nome": "alice",
+    "nascimento": "888-963-123-55",
+    "cpf": "10/08/2010",
+    "saldoAtual": 0,
+    "extrato": []
+  },
+  {
+    "nome": "alice",
+    "nascimento": "10/08/2000",
+    "cpf": "888-963-123-55",
+    "saldoAtual": 0,
+    "extrato": []
+  }
+]
