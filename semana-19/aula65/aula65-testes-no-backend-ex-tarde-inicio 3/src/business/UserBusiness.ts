@@ -1,10 +1,11 @@
 import { UserDatabase } from "../data/UserDatabase";
-import { User, stringToUserRole } from "../model/User";
+import { User, stringToUserRole, UserRole } from "../model/User";
 import { IdGenerator } from "../services/idGenerator";
 import { HashGenerator } from "../services/hashGenerator";
 import { TokenGenerator } from "../services/tokenGenerator";
 import { NotFoundError } from "../errors/NotFoundError";
 import { InvalidParameterError } from "../errors/InvalidParameterError";
+import { UnauthorizedError } from "../errors/UnauthorizedError";
 
 export class UserBusiness {
   constructor(
@@ -87,5 +88,20 @@ export class UserBusiness {
       email: user.getEmail(),
       role: user.getRole()
     }
+  }
+  public async getAllUsers(role: UserRole){
+    if(stringToUserRole(role) !== UserRole.ADMIN){
+        throw new UnauthorizedError(
+          "You must be an admin to access this endpoint"
+        )
+    }
+    const users = await this.userDatabase.getAllUsers();
+
+    return users.map(user => ({
+      id: user.getId(),
+      name: user.getName(),
+      email: user.getEmail(),
+      role: user.getRole()
+    }))
   }
 }
