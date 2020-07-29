@@ -90,18 +90,19 @@ export class UserBusiness {
     }
   }
   public async getAllUsers(role: UserRole){
-    if(stringToUserRole(role) !== UserRole.ADMIN){
-        throw new UnauthorizedError(
-          "You must be an admin to access this endpoint"
-        )
+
+    if (stringToUserRole(role) !== UserRole.ADMIN) {
+      throw new UnauthorizedError(
+        "You must be an admin to access this endpoint"
+      );
     }
     const users = await this.userDatabase.getAllUsers();
 
-    return users.map(user => ({
+    return users.map((user) => ({
       id: user.getId(),
       name: user.getName(),
       email: user.getEmail(),
-      role: user.getRole()
-    }))
+      role: user.getRole(),
+    }));
   }
 }

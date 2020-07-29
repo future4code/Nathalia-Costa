@@ -1,7 +1,7 @@
 import { UserBusiness } from "../../src/business/UserBusiness";
 import { stringToUserRole, User, UserRole } from "../../src/model/User";
 
-describe('Teste para UserByID', () => {
+describe('Teste para UserById', () => {
     
     let userDatabase = {};
     let hashGenerator = {};
@@ -58,4 +58,5 @@ describe('Teste para UserByID', () => {
             });
 
     });
-})
+});
+
