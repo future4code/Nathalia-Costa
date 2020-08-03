@@ -1,0 +1,3 @@
+Tive alguns probleminhas ao criar a conta na AWS, deveria ter passado essa demanda um dia antes. E o passo a passo do Exercicio 01 estava faltando alguns esclarecimento, como onde iniciar e dar os comandos.
+
+ 
