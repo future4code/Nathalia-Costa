@@ -1,3 +1,36 @@
+# Exercicio 01 
+
 Tive alguns probleminhas ao criar a conta na AWS, deveria ter passado essa demanda um dia antes. E o passo a passo do Exercicio 01 estava faltando alguns esclarecimento, como onde iniciar e dar os comandos.
 
  
+# Exercicio02
+
+1. Não é muito diferente do aprendemos no front, para criar um app react do zer basta dar um 'npx create-react-app app', entrar na pasta criada <app> e dar build nela. 
+
+3. ssh -i "julian_aws.pem" ubuntu@ec2-54-174-219-11.compute-1.amazonaws.com
+
+4.
+- CLONAR O REPOSITÓRIO
+git clone "https://github.com/future4code/julian-futureCar-2.git"
+
+- ENTRAR NO REPOSITORIO
+cd julian-futureCar-2
+
+- SABER O QUE TEM NA PASTA
+ls
+
+- INSTALAR DEPENDENCIAS
+npm install
+
+-
+NPM RUN BUILD
+cd build/
+NÃO ENTENDI MUITO BEM ESSA PARTE DO SUDO E PYTHON
+sudo apt update
+sudo apt install python
+
+# Rodamos essa pasta na porta 80
+sudo python -mSimpleHTTPServer 80
+
+
+7. A única diferença qeu percebi foi reaproveitar um repositório e não começado do zero, assim ter dois app-react na maquina.
