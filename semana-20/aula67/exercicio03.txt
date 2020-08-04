@@ -1,0 +1,6 @@
+exports.handler = async (ev) => {
+	return {
+      statusCode: 400,
+      body: JSON.stringify({ message: `O total da soma de ${ev.number1} + ${ev.number2} é igual a ${ev.number1 + ev.number2} `})
+    };
+};
