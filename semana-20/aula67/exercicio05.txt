@@ -1,0 +1,39 @@
+exports.handler = async event => {
+  if (!event.character) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: "Missing input" })
+    };
+  }
+  const character = {
+    name: event.character.name,
+    drawingName: event.character.drawing_name,
+    url: event.character.url
+  };
+  
+  if (!character.name) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: "Missing name" })
+    };
+  }
+  if (!character.drawingName) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: "Missing drawing name" })
+    };
+  }
+  if (!character.url) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: "Missing url" })
+    };
+  }
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify({
+      message: "Character is correct"
+    })
+  };
+};
