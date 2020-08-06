@@ -49,7 +49,7 @@ export class UserDatabase extends BaseDatabase {
 
   public async getFollowing(id: string): Promise<any> {
     const followers = await this.getConnection().raw(`
-      SELECT following_id FROM Following WHERE user_id = "${id}"`);
+      SELECT following_id FROM Cookenu_Following WHERE user_id = "${id}"`);
 
     return followers[0];
   }

@@ -31,7 +31,7 @@ app.get("/user/followers", getFollowing);
 app.post("/user/unfollow", unfollow);
 
 if (process.env.NODE_ENV !== "serverless") {
-  const server = app.listen(process.env.PORT || 3003, () => {
+  const server = app.listen(process.env.DB_PORT || 3003, () => {
   if (server) {
     const address = server.address() as AddressInfo;
     console.log(`Server is running in http://localhost:${address.port}`);

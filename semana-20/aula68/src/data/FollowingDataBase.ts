@@ -7,7 +7,7 @@ import { BaseDatabase } from "./BaseDatabase";
 export class FollowingDataBase extends BaseDatabase {
   public async follow(user_id: string, following_id: string): Promise<void> {
     await this.getConnection().raw(`
-    INSERT INTO Following VALUES ("${user_id}", "${following_id}")
+    INSERT INTO Cookenu_Following VALUES ("${user_id}", "${following_id}")
     `);
   }
 }

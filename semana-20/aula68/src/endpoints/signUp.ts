@@ -36,9 +36,7 @@ export const signUp = async (req: Request, res: Response): Promise<any> => {
       id,
     });
 
-    res.status(200).send({
-      token,
-    });
+    res.status(200).send({token});
   } catch (err) {
     res.status(400).send({
       message: err.message,

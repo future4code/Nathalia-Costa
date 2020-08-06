@@ -16,13 +16,13 @@ export class RecipeDatabase extends BaseDatabase {
         created_at,
         user_id,
       })
-      .into("Recipes");
+      .into("Cookenu_Recipes");
   }
 
   public async recipeInfo(id: string): Promise<any> {
     const result = await this.getConnection()
       .select("*")
-      .from("Recipes")
+      .from("Cookenu_Recipes")
       .where({ id });
     return result[0];
   }
@@ -30,26 +30,26 @@ export class RecipeDatabase extends BaseDatabase {
   public async getRecipeById(id: string): Promise<any> {
     const result = await this.getConnection()
       .select("*")
-      .from("Recipes")
+      .from("Cookenu_Recipes")
       .where({ id });
     return result[0];
   }
 
   public async deleteRecipe(id: string): Promise<void> {
     await this.getConnection().raw(`
-    DELETE FROM Recipes WHERE id = "${id}"`);
+    DELETE FROM Cookenu_Recipes WHERE id = "${id}"`);
   }
 
   public async getInfoById(id: string): Promise<any> {
     const info = await this.getConnection().raw(`
-    SELECT title, description, created_at FROM Recipes WHERE id = "${id}"`);
+    SELECT title, description, created_at FROM Cookenu_Recipes WHERE id = "${id}"`);
 
     return info[0];
   }
 
   public async getRecipesByUserId(user_id: string): Promise<any> {
     const feed = await this.getConnection().raw(`
-      SELECT * FROM Recipes WHERE user_id = "${user_id}"`);
+      SELECT * FROM Cookenu_Recipes WHERE user_id = "${user_id}"`);
 
     return feed[0];
   }
